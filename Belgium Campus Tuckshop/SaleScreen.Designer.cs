@@ -59,7 +59,7 @@
             this.mbtnRemove.DisabledForeColor = System.Drawing.Color.Gray;
             this.mbtnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mbtnRemove.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnRemove.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mbtnRemove.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnRemove.HoverTextColor = System.Drawing.Color.White;
             this.mbtnRemove.IsDerivedStyle = true;
             this.mbtnRemove.Location = new System.Drawing.Point(207, 650);
@@ -86,7 +86,7 @@
             this.mbtnBack.DisabledForeColor = System.Drawing.Color.Gray;
             this.mbtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mbtnBack.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mbtnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnBack.HoverTextColor = System.Drawing.Color.White;
             this.mbtnBack.IsDerivedStyle = true;
             this.mbtnBack.Location = new System.Drawing.Point(20, 650);

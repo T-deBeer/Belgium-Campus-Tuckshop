@@ -47,7 +47,7 @@
             this.mbtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnExit.HoverTextColor = System.Drawing.Color.White;
             this.mbtnExit.IsDerivedStyle = true;
-            this.mbtnExit.Location = new System.Drawing.Point(370, 492);
+            this.mbtnExit.Location = new System.Drawing.Point(370, 477);
             this.mbtnExit.Name = "mbtnExit";
             this.mbtnExit.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnExit.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
