@@ -418,6 +418,7 @@
             this.Controls.Add(this.mbtnNext);
             this.Controls.Add(this.mbtnPay);
             this.Name = "SalesScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Style = MetroSet_UI.Enums.Style.Dark;
             this.Text = "SALES MENU";
             this.TextColor = System.Drawing.Color.White;

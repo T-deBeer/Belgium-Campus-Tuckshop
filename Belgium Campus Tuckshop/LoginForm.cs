@@ -10,6 +10,22 @@ namespace Belgium_Campus_Tuckshop
         {
             InitializeComponent();
             LoadCashiers();
+            //LoadSale(DateOnly.FromDateTime(DateTime.Today.Date).ToString());
+
+            SaleModel sale = new SaleModel();
+
+            //sale.ID = SqliteDataAccess.LoadAllSales().Count + 1;
+            //sale.CustomerName = "Fernando";
+            //sale.Date = DateOnly.FromDateTime(DateTime.Today.Date).ToString();
+            //sale.Receipt = "This is the receipt";
+
+            //SqliteDataAccess.InsertSale(sale);
+
+            //List<SaleModel> saleList = SqliteDataAccess.LoadAllSales();
+            //foreach (var saleMade in saleList)
+            //{
+            //    MessageBox.Show(saleMade.CustomerName);
+            //}
         }
 
         private void LoadCashiers()
@@ -39,7 +55,9 @@ namespace Belgium_Campus_Tuckshop
                     if (mtbxPassword.Text == cashier.Password)
                     {
                         success = true;
-                        MessageBox.Show($"{cashier.Name} Welcome");
+                        UserMenu userMenu = new UserMenu(); 
+                        userMenu.Show();
+                        this.Hide();
                         break;
                     }
                     else

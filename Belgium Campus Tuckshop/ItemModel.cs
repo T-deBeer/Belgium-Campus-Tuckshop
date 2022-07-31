@@ -13,6 +13,7 @@ namespace ClassLibrary
         public string Type { get; set; }
         public double Price { get; set; }
         
-        public bool Popular { get; set; }
+        public int Popular { get; set; }
+        public string Description { get; set; }
     }
 }

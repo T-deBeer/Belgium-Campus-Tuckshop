@@ -257,6 +257,7 @@
             this.Controls.Add(this.lbxCustomers);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "SalesReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Style = MetroSet_UI.Enums.Style.Dark;
             this.Text = "SALES REPORTS";
             this.TextColor = System.Drawing.Color.White;

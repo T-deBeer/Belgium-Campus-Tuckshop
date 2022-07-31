@@ -45,6 +45,10 @@
             this.tpFood = new System.Windows.Forms.TabPage();
             this.tpColdDrinks = new System.Windows.Forms.TabPage();
             this.tpHotDrinks = new System.Windows.Forms.TabPage();
+            this.lblItemType = new System.Windows.Forms.Label();
+            this.mtbxItemType = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.lblPopular = new System.Windows.Forms.Label();
+            this.mswPopular = new MetroSet_UI.Controls.MetroSetSwitch();
             this.metroSetTabControl1.SuspendLayout();
             this.tpPopularItems.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +60,7 @@
             this.lblItemName.BackColor = System.Drawing.Color.Transparent;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.lblItemName.Location = new System.Drawing.Point(451, 112);
+            this.lblItemName.Location = new System.Drawing.Point(467, 142);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(72, 16);
             this.lblItemName.TabIndex = 7;
@@ -77,12 +81,12 @@
             this.mtbxItemName.Image = null;
             this.mtbxItemName.IsDerivedStyle = true;
             this.mtbxItemName.Lines = null;
-            this.mtbxItemName.Location = new System.Drawing.Point(453, 131);
+            this.mtbxItemName.Location = new System.Drawing.Point(469, 161);
             this.mtbxItemName.MaxLength = 32767;
             this.mtbxItemName.Multiline = false;
             this.mtbxItemName.Name = "mtbxItemName";
             this.mtbxItemName.ReadOnly = false;
-            this.mtbxItemName.Size = new System.Drawing.Size(362, 33);
+            this.mtbxItemName.Size = new System.Drawing.Size(250, 33);
             this.mtbxItemName.Style = MetroSet_UI.Enums.Style.Dark;
             this.mtbxItemName.StyleManager = null;
             this.mtbxItemName.TabIndex = 6;
@@ -99,7 +103,7 @@
             this.lblItemDesc.BackColor = System.Drawing.Color.Transparent;
             this.lblItemDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblItemDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.lblItemDesc.Location = new System.Drawing.Point(451, 178);
+            this.lblItemDesc.Location = new System.Drawing.Point(467, 230);
             this.lblItemDesc.Name = "lblItemDesc";
             this.lblItemDesc.Size = new System.Drawing.Size(103, 16);
             this.lblItemDesc.TabIndex = 9;
@@ -120,12 +124,12 @@
             this.metroSetTextBox1.Image = null;
             this.metroSetTextBox1.IsDerivedStyle = true;
             this.metroSetTextBox1.Lines = null;
-            this.metroSetTextBox1.Location = new System.Drawing.Point(451, 197);
+            this.metroSetTextBox1.Location = new System.Drawing.Point(467, 249);
             this.metroSetTextBox1.MaxLength = 32767;
             this.metroSetTextBox1.Multiline = true;
             this.metroSetTextBox1.Name = "metroSetTextBox1";
             this.metroSetTextBox1.ReadOnly = false;
-            this.metroSetTextBox1.Size = new System.Drawing.Size(362, 176);
+            this.metroSetTextBox1.Size = new System.Drawing.Size(250, 176);
             this.metroSetTextBox1.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetTextBox1.StyleManager = null;
             this.metroSetTextBox1.TabIndex = 8;
@@ -142,7 +146,7 @@
             this.lblItemCost.BackColor = System.Drawing.Color.Transparent;
             this.lblItemCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblItemCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.lblItemCost.Location = new System.Drawing.Point(451, 387);
+            this.lblItemCost.Location = new System.Drawing.Point(758, 368);
             this.lblItemCost.Name = "lblItemCost";
             this.lblItemCost.Size = new System.Drawing.Size(62, 16);
             this.lblItemCost.TabIndex = 11;
@@ -163,12 +167,12 @@
             this.mtbxItemCost.Image = null;
             this.mtbxItemCost.IsDerivedStyle = true;
             this.mtbxItemCost.Lines = null;
-            this.mtbxItemCost.Location = new System.Drawing.Point(451, 406);
+            this.mtbxItemCost.Location = new System.Drawing.Point(758, 387);
             this.mtbxItemCost.MaxLength = 32767;
             this.mtbxItemCost.Multiline = false;
             this.mtbxItemCost.Name = "mtbxItemCost";
             this.mtbxItemCost.ReadOnly = false;
-            this.mtbxItemCost.Size = new System.Drawing.Size(362, 33);
+            this.mtbxItemCost.Size = new System.Drawing.Size(245, 33);
             this.mtbxItemCost.Style = MetroSet_UI.Enums.Style.Dark;
             this.mtbxItemCost.StyleManager = null;
             this.mtbxItemCost.TabIndex = 12;
@@ -189,7 +193,7 @@
             this.mbtnUpdate.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnUpdate.HoverTextColor = System.Drawing.Color.White;
             this.mbtnUpdate.IsDerivedStyle = true;
-            this.mbtnUpdate.Location = new System.Drawing.Point(585, 499);
+            this.mbtnUpdate.Location = new System.Drawing.Point(687, 505);
             this.mbtnUpdate.Name = "mbtnUpdate";
             this.mbtnUpdate.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mbtnUpdate.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -216,7 +220,7 @@
             this.mbtnAddItem.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnAddItem.HoverTextColor = System.Drawing.Color.White;
             this.mbtnAddItem.IsDerivedStyle = true;
-            this.mbtnAddItem.Location = new System.Drawing.Point(710, 499);
+            this.mbtnAddItem.Location = new System.Drawing.Point(898, 505);
             this.mbtnAddItem.Name = "mbtnAddItem";
             this.mbtnAddItem.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mbtnAddItem.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -243,7 +247,7 @@
             this.mbtnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnBack.HoverTextColor = System.Drawing.Color.White;
             this.mbtnBack.IsDerivedStyle = true;
-            this.mbtnBack.Location = new System.Drawing.Point(68, 499);
+            this.mbtnBack.Location = new System.Drawing.Point(68, 505);
             this.mbtnBack.Name = "mbtnBack";
             this.mbtnBack.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -270,7 +274,7 @@
             this.mbtnDelete.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnDelete.HoverTextColor = System.Drawing.Color.White;
             this.mbtnDelete.IsDerivedStyle = true;
-            this.mbtnDelete.Location = new System.Drawing.Point(451, 499);
+            this.mbtnDelete.Location = new System.Drawing.Point(467, 505);
             this.mbtnDelete.Name = "mbtnDelete";
             this.mbtnDelete.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnDelete.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -293,7 +297,7 @@
             this.lblItems.BackColor = System.Drawing.Color.Transparent;
             this.lblItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.lblItems.Location = new System.Drawing.Point(64, 112);
+            this.lblItems.Location = new System.Drawing.Point(68, 111);
             this.lblItems.Name = "lblItems";
             this.lblItems.Size = new System.Drawing.Size(76, 16);
             this.lblItems.TabIndex = 5;
@@ -380,12 +384,96 @@
             this.tpHotDrinks.TabIndex = 3;
             this.tpHotDrinks.Text = "Hot Drinks";
             // 
+            // lblItemType
+            // 
+            this.lblItemType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblItemType.AutoSize = true;
+            this.lblItemType.BackColor = System.Drawing.Color.Transparent;
+            this.lblItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblItemType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.lblItemType.Location = new System.Drawing.Point(753, 142);
+            this.lblItemType.Name = "lblItemType";
+            this.lblItemType.Size = new System.Drawing.Size(67, 16);
+            this.lblItemType.TabIndex = 38;
+            this.lblItemType.Text = "Item Type";
+            // 
+            // mtbxItemType
+            // 
+            this.mtbxItemType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtbxItemType.AutoCompleteCustomSource = null;
+            this.mtbxItemType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.mtbxItemType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.mtbxItemType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.mtbxItemType.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.mtbxItemType.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxItemType.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mtbxItemType.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mtbxItemType.Image = null;
+            this.mtbxItemType.IsDerivedStyle = true;
+            this.mtbxItemType.Lines = null;
+            this.mtbxItemType.Location = new System.Drawing.Point(753, 161);
+            this.mtbxItemType.MaxLength = 32767;
+            this.mtbxItemType.Multiline = false;
+            this.mtbxItemType.Name = "mtbxItemType";
+            this.mtbxItemType.ReadOnly = false;
+            this.mtbxItemType.Size = new System.Drawing.Size(250, 33);
+            this.mtbxItemType.Style = MetroSet_UI.Enums.Style.Dark;
+            this.mtbxItemType.StyleManager = null;
+            this.mtbxItemType.TabIndex = 37;
+            this.mtbxItemType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.mtbxItemType.ThemeAuthor = "Narwin";
+            this.mtbxItemType.ThemeName = "MetroDark";
+            this.mtbxItemType.UseSystemPasswordChar = false;
+            this.mtbxItemType.WatermarkText = "Item Type";
+            // 
+            // lblPopular
+            // 
+            this.lblPopular.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPopular.AutoSize = true;
+            this.lblPopular.BackColor = System.Drawing.Color.Transparent;
+            this.lblPopular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPopular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.lblPopular.Location = new System.Drawing.Point(753, 230);
+            this.lblPopular.Name = "lblPopular";
+            this.lblPopular.Size = new System.Drawing.Size(54, 16);
+            this.lblPopular.TabIndex = 39;
+            this.lblPopular.Text = "Popular";
+            // 
+            // mswPopular
+            // 
+            this.mswPopular.BackColor = System.Drawing.Color.Transparent;
+            this.mswPopular.BackgroundColor = System.Drawing.Color.Empty;
+            this.mswPopular.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.mswPopular.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mswPopular.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.mswPopular.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.mswPopular.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mswPopular.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.mswPopular.IsDerivedStyle = true;
+            this.mswPopular.Location = new System.Drawing.Point(758, 249);
+            this.mswPopular.Name = "mswPopular";
+            this.mswPopular.Size = new System.Drawing.Size(58, 22);
+            this.mswPopular.Style = MetroSet_UI.Enums.Style.Dark;
+            this.mswPopular.StyleManager = null;
+            this.mswPopular.Switched = false;
+            this.mswPopular.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.mswPopular.TabIndex = 40;
+            this.mswPopular.Text = "metroSetSwitch1";
+            this.mswPopular.ThemeAuthor = "Narwin";
+            this.mswPopular.ThemeName = "MetroDark";
+            this.mswPopular.UnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            // 
             // ItemsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(966, 595);
+            this.ClientSize = new System.Drawing.Size(1108, 592);
+            this.Controls.Add(this.mswPopular);
+            this.Controls.Add(this.lblPopular);
+            this.Controls.Add(this.lblItemType);
+            this.Controls.Add(this.mtbxItemType);
             this.Controls.Add(this.metroSetTabControl1);
             this.Controls.Add(this.mbtnDelete);
             this.Controls.Add(this.mbtnBack);
@@ -399,6 +487,7 @@
             this.Controls.Add(this.mtbxItemName);
             this.Controls.Add(this.lblItems);
             this.Name = "ItemsForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Style = MetroSet_UI.Enums.Style.Dark;
             this.Text = "EDIT OR ADD ITEMS";
             this.TextColor = System.Drawing.Color.White;
@@ -428,5 +517,9 @@
         private TabPage tpFood;
         private TabPage tpColdDrinks;
         private TabPage tpHotDrinks;
+        private Label lblItemType;
+        private MetroSet_UI.Controls.MetroSetTextBox mtbxItemType;
+        private Label lblPopular;
+        private MetroSet_UI.Controls.MetroSetSwitch mswPopular;
     }
 }

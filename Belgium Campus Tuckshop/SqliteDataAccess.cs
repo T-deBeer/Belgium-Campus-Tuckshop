@@ -57,11 +57,47 @@ namespace ClassLibrary
             }
         }
 
-        public static void ListSale(SaleModel sale)
+        public static void InsertSale(SaleModel sale)
         {
-
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                database.Execute("INSERT INTO SalesReport (SaleDate, CustomerName, Receipt) VALUES (@Date, @CustomerName, @Receipt)", sale);
+            }
         }
-       
+
+        public static List<SaleModel> LoadSalesByDate(string date)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = database.Query<SaleModel>($"SELECT * FROM SalesReport WHERE SaleDate LIKE '%{date}%'", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static List<SaleModel> LoadAllSales()
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = database.Query<SaleModel>($"SELECT * FROM SalesReport", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static void AddNewItem(ItemModel item)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                database.Execute("INSERT INTO Products (ProductName, ProductType, ProductCost, Popular, ItemDescription) VALUES (@Name, @Type, @Price, @Popular @Description)", item);
+            }
+        }
+
+        public static void UpdateItem(ItemModel item)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                database.Execute("UPDATE Products SET ProductName = @Name, ProductType = @Type, ProductCost = @Price, Popular = @Popular, ItemDescription = @Description WHERE ProductID = @ID", item);
+            }
+        }
 
         private static string LoadConnectionString(string id = "Default")
         {

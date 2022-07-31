@@ -44,7 +44,7 @@
             this.mbtnExit.DisabledForeColor = System.Drawing.Color.Gray;
             this.mbtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mbtnExit.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mbtnExit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnExit.HoverTextColor = System.Drawing.Color.White;
             this.mbtnExit.IsDerivedStyle = true;
             this.mbtnExit.Location = new System.Drawing.Point(370, 477);
@@ -100,7 +100,7 @@
             this.mbtnSignOut.DisabledForeColor = System.Drawing.Color.Gray;
             this.mbtnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mbtnSignOut.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnSignOut.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mbtnSignOut.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnSignOut.HoverTextColor = System.Drawing.Color.White;
             this.mbtnSignOut.IsDerivedStyle = true;
             this.mbtnSignOut.Location = new System.Drawing.Point(15, 585);
@@ -187,6 +187,7 @@
             this.Controls.Add(this.mbtnExit);
             this.Controls.Add(this.mbtnSalesMenu);
             this.Name = "UserMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Style = MetroSet_UI.Enums.Style.Dark;
             this.Text = "SELECT AN OPTION";
             this.TextColor = System.Drawing.Color.White;
