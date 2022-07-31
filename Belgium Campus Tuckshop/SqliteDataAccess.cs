@@ -91,11 +91,11 @@ namespace ClassLibrary
             }
         }
 
-        public static void UpdateItem(ItemModel item)
+        public static void UpdateItem(ItemModel item, string name)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("UPDATE Products SET ProductName = @Name, ProductType = @Type, ProductCost = @Price, Popular = @Popular, ItemDescription = @Description WHERE ProductID = @ID", item);
+                database.Execute("UPDATE Products SET ProductName = @Name, ProductType = @Type, ProductCost = @Price, Popular = @Popular, ItemDescription = @Description WHERE ProductName = @Name", item);
             }
         }
 

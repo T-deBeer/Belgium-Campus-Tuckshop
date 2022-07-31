@@ -9,11 +9,11 @@ namespace ClassLibrary
     public class ItemModel
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public double Price { get; set; }
+        public string ProductName { get; set; }
+        public string ProductType { get; set; }
+        public double ProductCost { get; set; }
         
         public int Popular { get; set; }
-        public string Description { get; set; }
+        public string ItemDescription { get; set; }
     }
 }

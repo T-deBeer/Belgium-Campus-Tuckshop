@@ -6,26 +6,17 @@ namespace Belgium_Campus_Tuckshop
     public partial class LoginForm : MetroSetForm
     {
         List<PersonModel> cashierList = new List<PersonModel>();
+        List<ItemModel> ItemList = new List<ItemModel>();
         public LoginForm()
         {
             InitializeComponent();
             LoadCashiers();
-            //LoadSale(DateOnly.FromDateTime(DateTime.Today.Date).ToString());
+            ItemList = SqliteDataAccess.LoadAllItems();
 
-            SaleModel sale = new SaleModel();
-
-            //sale.ID = SqliteDataAccess.LoadAllSales().Count + 1;
-            //sale.CustomerName = "Fernando";
-            //sale.Date = DateOnly.FromDateTime(DateTime.Today.Date).ToString();
-            //sale.Receipt = "This is the receipt";
-
-            //SqliteDataAccess.InsertSale(sale);
-
-            //List<SaleModel> saleList = SqliteDataAccess.LoadAllSales();
-            //foreach (var saleMade in saleList)
-            //{
-            //    MessageBox.Show(saleMade.CustomerName);
-            //}
+            foreach (var item in ItemList)
+            {
+                MessageBox.Show(item.ProductName);
+            }
         }
 
         private void LoadCashiers()
