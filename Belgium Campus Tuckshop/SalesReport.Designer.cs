@@ -37,7 +37,6 @@
             this.mbtnDelete = new MetroSet_UI.Controls.MetroSetButton();
             this.mbtnBack = new MetroSet_UI.Controls.MetroSetButton();
             this.mbtnAddItem = new MetroSet_UI.Controls.MetroSetButton();
-            this.mbtnEdit = new MetroSet_UI.Controls.MetroSetButton();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -49,6 +48,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(307, 22);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // lblCustomers
             // 
@@ -82,6 +82,7 @@
             this.lbxCustomers.Name = "lbxCustomers";
             this.lbxCustomers.Size = new System.Drawing.Size(307, 242);
             this.lbxCustomers.TabIndex = 27;
+            this.lbxCustomers.SelectedIndexChanged += new System.EventHandler(this.lbxCustomers_SelectedIndexChanged);
             // 
             // lblReceipt
             // 
@@ -156,6 +157,7 @@
             this.mbtnDelete.Text = "Delete Customer Sale";
             this.mbtnDelete.ThemeAuthor = "Narwin";
             this.mbtnDelete.ThemeName = "MetroDark";
+            this.mbtnDelete.Click += new System.EventHandler(this.mbtnDelete_Click);
             // 
             // mbtnBack
             // 
@@ -197,7 +199,7 @@
             this.mbtnAddItem.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnAddItem.HoverTextColor = System.Drawing.Color.White;
             this.mbtnAddItem.IsDerivedStyle = true;
-            this.mbtnAddItem.Location = new System.Drawing.Point(672, 494);
+            this.mbtnAddItem.Location = new System.Drawing.Point(540, 494);
             this.mbtnAddItem.Name = "mbtnAddItem";
             this.mbtnAddItem.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mbtnAddItem.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -212,34 +214,7 @@
             this.mbtnAddItem.Text = "Create Month Report";
             this.mbtnAddItem.ThemeAuthor = "Narwin";
             this.mbtnAddItem.ThemeName = "MetroDark";
-            // 
-            // mbtnEdit
-            // 
-            this.mbtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mbtnEdit.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.mbtnEdit.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.mbtnEdit.DisabledForeColor = System.Drawing.Color.Gray;
-            this.mbtnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mbtnEdit.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnEdit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnEdit.HoverTextColor = System.Drawing.Color.White;
-            this.mbtnEdit.IsDerivedStyle = true;
-            this.mbtnEdit.Location = new System.Drawing.Point(409, 494);
-            this.mbtnEdit.Name = "mbtnEdit";
-            this.mbtnEdit.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.mbtnEdit.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.mbtnEdit.NormalTextColor = System.Drawing.Color.White;
-            this.mbtnEdit.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.mbtnEdit.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.mbtnEdit.PressTextColor = System.Drawing.Color.White;
-            this.mbtnEdit.Size = new System.Drawing.Size(145, 53);
-            this.mbtnEdit.Style = MetroSet_UI.Enums.Style.Custom;
-            this.mbtnEdit.StyleManager = null;
-            this.mbtnEdit.TabIndex = 33;
-            this.mbtnEdit.Text = "Edit Sale Information";
-            this.mbtnEdit.ThemeAuthor = "Narwin";
-            this.mbtnEdit.ThemeName = "MetroDark";
+            this.mbtnAddItem.Click += new System.EventHandler(this.mbtnAddItem_Click);
             // 
             // SalesReport
             // 
@@ -250,7 +225,6 @@
             this.Controls.Add(this.mbtnDelete);
             this.Controls.Add(this.mbtnBack);
             this.Controls.Add(this.mbtnAddItem);
-            this.Controls.Add(this.mbtnEdit);
             this.Controls.Add(this.lblReceipt);
             this.Controls.Add(this.rtbxReceipt);
             this.Controls.Add(this.lblCustomers);
@@ -277,6 +251,5 @@
         private MetroSet_UI.Controls.MetroSetButton mbtnDelete;
         private MetroSet_UI.Controls.MetroSetButton mbtnBack;
         private MetroSet_UI.Controls.MetroSetButton mbtnAddItem;
-        private MetroSet_UI.Controls.MetroSetButton mbtnEdit;
     }
 }
