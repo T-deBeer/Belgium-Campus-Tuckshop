@@ -167,11 +167,11 @@ namespace ClassLibrary
             }
         }
 
-        public static List<SaleModel> LoadMonthlySales(string datePart)
+        public static List<SaleModel> LoadMonthlySales(string month, string year)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = database.Query<SaleModel>($"SELECT * FROM SalesReport WHERE SaleDate LIKE '%{datePart}'", new DynamicParameters());
+                var output = database.Query<SaleModel>($"SELECT * FROM SalesReport WHERE SaleDate LIKE '{month}/%/{year}'", new DynamicParameters());
                 return output.ToList();
             }
         }
