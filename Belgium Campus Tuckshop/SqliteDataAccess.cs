@@ -204,7 +204,7 @@ namespace ClassLibrary
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute($"DELETE FROM SalesRecord WHERE SaleDate = {date} AND CustomerName = {name}");
+                database.Execute($"DELETE FROM SalesReport WHERE SaleDate = {date} AND CustomerName = {name}");
             }
         }
 
