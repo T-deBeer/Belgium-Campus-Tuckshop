@@ -43,6 +43,42 @@ namespace ClassLibrary
         }
 
         /// <summary>
+        /// Creates a list of object of the class of ItemModel
+        /// The list is populated by the Products Tbale in the SQLite Database
+        /// It only returns products that have the product type "Cold Drinks"
+        /// </summary>
+        /// <returns></returns>
+        public static List<ItemModel> LoadColdDrinks()
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = database.Query<ItemModel>("SELECT * FROM Products WHERE ProductType = 'Cold Drink' ", new DynamicParameters());
+               return output.ToList();
+            }
+
+        }
+
+        /// <summary>
+        /// Creates a list of object of the class of ItemModel
+        /// The list is populated by the Products Tbale in the SQLite Database
+        /// It only returns products that have the product type "Hot Drinks"
+        /// </summary>
+        /// <returns></returns>
+
+   
+
+        public static List<ItemModel> LoadHotDrinks()
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = database.Query<ItemModel>("SELECT * FROM Products WHERE ProductType = 'Hot Drink' ", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+
+
+        /// <summary>
         /// Creates a list of objects of the class of ItemModel,
         /// the list is populated by the Products Table in the SQLite Database,
         /// it only returns the Products that are considered popular

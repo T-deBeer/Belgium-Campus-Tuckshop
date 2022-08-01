@@ -36,19 +36,25 @@
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.mtbxCustomerName = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblItems = new System.Windows.Forms.Label();
-            this.lbxItemList = new System.Windows.Forms.ListBox();
             this.rtbxReceipt = new MetroSet_UI.Controls.MetroSetRichTextBox();
             this.lblReceipt = new System.Windows.Forms.Label();
             this.lblAmounPaid = new System.Windows.Forms.Label();
             this.mtbxAmountPaid = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblChange = new System.Windows.Forms.Label();
-            this.metroSetTabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
-            this.tpPopularItems = new System.Windows.Forms.TabPage();
-            this.tpFood = new System.Windows.Forms.TabPage();
-            this.tpColdDrinks = new System.Windows.Forms.TabPage();
-            this.tpHotDrinks = new System.Windows.Forms.TabPage();
-            this.metroSetTabControl1.SuspendLayout();
-            this.tpPopularItems.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ListBoxPopular = new MetroSet_UI.Controls.MetroSetListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ListBoxFood = new MetroSet_UI.Controls.MetroSetListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ListBoxColdDrinks = new MetroSet_UI.Controls.MetroSetListBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ListBoxHotDrinks = new MetroSet_UI.Controls.MetroSetListBox();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // mbtnRemove
@@ -201,6 +207,7 @@
             this.mtbxCustomerName.ThemeName = "MetroDark";
             this.mtbxCustomerName.UseSystemPasswordChar = false;
             this.mtbxCustomerName.WatermarkText = "Customer Name";
+            this.mtbxCustomerName.Click += new System.EventHandler(this.mtbxCustomerName_Click);
             // 
             // lblItems
             // 
@@ -214,27 +221,6 @@
             this.lblItems.Size = new System.Drawing.Size(80, 16);
             this.lblItems.TabIndex = 26;
             this.lblItems.Text = "Select Items";
-            // 
-            // lbxItemList
-            // 
-            this.lbxItemList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.lbxItemList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbxItemList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxItemList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbxItemList.ForeColor = System.Drawing.Color.White;
-            this.lbxItemList.FormattingEnabled = true;
-            this.lbxItemList.ItemHeight = 16;
-            this.lbxItemList.Items.AddRange(new object[] {
-            "Tramazini",
-            "Toasted Cheese",
-            "Toasted Chicken Mayo",
-            "Buddy Coke",
-            "Buddy Cream Soda ",
-            "Bar-One"});
-            this.lbxItemList.Location = new System.Drawing.Point(0, 0);
-            this.lbxItemList.Name = "lbxItemList";
-            this.lbxItemList.Size = new System.Drawing.Size(299, 301);
-            this.lbxItemList.TabIndex = 25;
             // 
             // rtbxReceipt
             // 
@@ -338,65 +324,180 @@
             this.lblChange.TabIndex = 33;
             this.lblChange.Text = "Change Required: R 0.60";
             // 
-            // metroSetTabControl1
+            // tabControl1
             // 
-            this.metroSetTabControl1.AnimateEasingType = MetroSet_UI.Enums.EasingType.CubeOut;
-            this.metroSetTabControl1.AnimateTime = 200;
-            this.metroSetTabControl1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.metroSetTabControl1.Controls.Add(this.tpPopularItems);
-            this.metroSetTabControl1.Controls.Add(this.tpFood);
-            this.metroSetTabControl1.Controls.Add(this.tpColdDrinks);
-            this.metroSetTabControl1.Controls.Add(this.tpHotDrinks);
-            this.metroSetTabControl1.IsDerivedStyle = true;
-            this.metroSetTabControl1.ItemSize = new System.Drawing.Size(100, 38);
-            this.metroSetTabControl1.Location = new System.Drawing.Point(20, 236);
-            this.metroSetTabControl1.Name = "metroSetTabControl1";
-            this.metroSetTabControl1.SelectedIndex = 0;
-            this.metroSetTabControl1.SelectedTextColor = System.Drawing.Color.White;
-            this.metroSetTabControl1.Size = new System.Drawing.Size(307, 347);
-            this.metroSetTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.metroSetTabControl1.Speed = 100;
-            this.metroSetTabControl1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetTabControl1.StyleManager = null;
-            this.metroSetTabControl1.TabIndex = 35;
-            this.metroSetTabControl1.ThemeAuthor = "Narwin";
-            this.metroSetTabControl1.ThemeName = "MetroDark";
-            this.metroSetTabControl1.UnselectedTextColor = System.Drawing.Color.Gray;
-            this.metroSetTabControl1.UseAnimation = false;
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(20, 236);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(307, 304);
+            this.tabControl1.TabIndex = 0;
             // 
-            // tpPopularItems
+            // tabPage1
             // 
-            this.tpPopularItems.Controls.Add(this.lbxItemList);
-            this.tpPopularItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.tpPopularItems.Location = new System.Drawing.Point(4, 42);
-            this.tpPopularItems.Name = "tpPopularItems";
-            this.tpPopularItems.Size = new System.Drawing.Size(299, 301);
-            this.tpPopularItems.TabIndex = 0;
-            this.tpPopularItems.Text = "Popular";
+            this.tabPage1.Controls.Add(this.ListBoxPopular);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(299, 267);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tpFood
+            // ListBoxPopular
             // 
-            this.tpFood.Location = new System.Drawing.Point(4, 42);
-            this.tpFood.Name = "tpFood";
-            this.tpFood.Size = new System.Drawing.Size(299, 301);
-            this.tpFood.TabIndex = 1;
-            this.tpFood.Text = "Food";
+            this.ListBoxPopular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ListBoxPopular.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ListBoxPopular.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ListBoxPopular.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ListBoxPopular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ListBoxPopular.HoveredItemBackColor = System.Drawing.Color.LightGray;
+            this.ListBoxPopular.HoveredItemColor = System.Drawing.Color.DimGray;
+            this.ListBoxPopular.IsDerivedStyle = true;
+            this.ListBoxPopular.ItemHeight = 30;
+            this.ListBoxPopular.Location = new System.Drawing.Point(0, 0);
+            this.ListBoxPopular.MultiSelect = false;
+            this.ListBoxPopular.Name = "ListBoxPopular";
+            this.ListBoxPopular.SelectedIndex = -1;
+            this.ListBoxPopular.SelectedItem = null;
+            this.ListBoxPopular.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.ListBoxPopular.SelectedItemColor = System.Drawing.Color.White;
+            this.ListBoxPopular.SelectedText = null;
+            this.ListBoxPopular.SelectedValue = null;
+            this.ListBoxPopular.ShowBorder = false;
+            this.ListBoxPopular.ShowScrollBar = false;
+            this.ListBoxPopular.Size = new System.Drawing.Size(299, 276);
+            this.ListBoxPopular.Style = MetroSet_UI.Enums.Style.Dark;
+            this.ListBoxPopular.StyleManager = null;
+            this.ListBoxPopular.TabIndex = 0;
+            this.ListBoxPopular.ThemeAuthor = "Narwin";
+            this.ListBoxPopular.ThemeName = "MetroDark";
+            this.ListBoxPopular.SelectedIndexChanged += new MetroSet_UI.Controls.MetroSetListBox.SelectedIndexChangedEventHandler(this.metroSetListBox1_SelectedIndexChanged);
             // 
-            // tpColdDrinks
+            // tabPage2
             // 
-            this.tpColdDrinks.Location = new System.Drawing.Point(4, 42);
-            this.tpColdDrinks.Name = "tpColdDrinks";
-            this.tpColdDrinks.Size = new System.Drawing.Size(299, 301);
-            this.tpColdDrinks.TabIndex = 2;
-            this.tpColdDrinks.Text = "Cold Drinks";
+            this.tabPage2.Controls.Add(this.ListBoxFood);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(299, 267);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tpHotDrinks
+            // ListBoxFood
             // 
-            this.tpHotDrinks.Location = new System.Drawing.Point(4, 42);
-            this.tpHotDrinks.Name = "tpHotDrinks";
-            this.tpHotDrinks.Size = new System.Drawing.Size(299, 301);
-            this.tpHotDrinks.TabIndex = 3;
-            this.tpHotDrinks.Text = "Hot Drinks";
+            this.ListBoxFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ListBoxFood.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ListBoxFood.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ListBoxFood.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ListBoxFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ListBoxFood.HoveredItemBackColor = System.Drawing.Color.LightGray;
+            this.ListBoxFood.HoveredItemColor = System.Drawing.Color.DimGray;
+            this.ListBoxFood.IsDerivedStyle = true;
+            this.ListBoxFood.ItemHeight = 30;
+            this.ListBoxFood.Location = new System.Drawing.Point(0, -2);
+            this.ListBoxFood.MultiSelect = false;
+            this.ListBoxFood.Name = "ListBoxFood";
+            this.ListBoxFood.SelectedIndex = -1;
+            this.ListBoxFood.SelectedItem = null;
+            this.ListBoxFood.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.ListBoxFood.SelectedItemColor = System.Drawing.Color.White;
+            this.ListBoxFood.SelectedText = null;
+            this.ListBoxFood.SelectedValue = null;
+            this.ListBoxFood.ShowBorder = false;
+            this.ListBoxFood.ShowScrollBar = false;
+            this.ListBoxFood.Size = new System.Drawing.Size(299, 276);
+            this.ListBoxFood.Style = MetroSet_UI.Enums.Style.Dark;
+            this.ListBoxFood.StyleManager = null;
+            this.ListBoxFood.TabIndex = 1;
+            this.ListBoxFood.ThemeAuthor = "Narwin";
+            this.ListBoxFood.ThemeName = "MetroDark";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.ListBoxColdDrinks);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(299, 267);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ListBoxColdDrinks
+            // 
+            this.ListBoxColdDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ListBoxColdDrinks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ListBoxColdDrinks.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ListBoxColdDrinks.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ListBoxColdDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ListBoxColdDrinks.HoveredItemBackColor = System.Drawing.Color.LightGray;
+            this.ListBoxColdDrinks.HoveredItemColor = System.Drawing.Color.DimGray;
+            this.ListBoxColdDrinks.IsDerivedStyle = true;
+            this.ListBoxColdDrinks.ItemHeight = 30;
+            this.ListBoxColdDrinks.Location = new System.Drawing.Point(0, -5);
+            this.ListBoxColdDrinks.MultiSelect = false;
+            this.ListBoxColdDrinks.Name = "ListBoxColdDrinks";
+            this.ListBoxColdDrinks.SelectedIndex = -1;
+            this.ListBoxColdDrinks.SelectedItem = null;
+            this.ListBoxColdDrinks.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.ListBoxColdDrinks.SelectedItemColor = System.Drawing.Color.White;
+            this.ListBoxColdDrinks.SelectedText = null;
+            this.ListBoxColdDrinks.SelectedValue = null;
+            this.ListBoxColdDrinks.ShowBorder = false;
+            this.ListBoxColdDrinks.ShowScrollBar = false;
+            this.ListBoxColdDrinks.Size = new System.Drawing.Size(299, 276);
+            this.ListBoxColdDrinks.Style = MetroSet_UI.Enums.Style.Dark;
+            this.ListBoxColdDrinks.StyleManager = null;
+            this.ListBoxColdDrinks.TabIndex = 2;
+            this.ListBoxColdDrinks.ThemeAuthor = "Narwin";
+            this.ListBoxColdDrinks.ThemeName = "MetroDark";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.ListBoxHotDrinks);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(299, 273);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // ListBoxHotDrinks
+            // 
+            this.ListBoxHotDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ListBoxHotDrinks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ListBoxHotDrinks.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.ListBoxHotDrinks.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ListBoxHotDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ListBoxHotDrinks.HoveredItemBackColor = System.Drawing.Color.LightGray;
+            this.ListBoxHotDrinks.HoveredItemColor = System.Drawing.Color.DimGray;
+            this.ListBoxHotDrinks.IsDerivedStyle = true;
+            this.ListBoxHotDrinks.ItemHeight = 30;
+            this.ListBoxHotDrinks.Location = new System.Drawing.Point(0, -5);
+            this.ListBoxHotDrinks.MultiSelect = false;
+            this.ListBoxHotDrinks.Name = "ListBoxHotDrinks";
+            this.ListBoxHotDrinks.SelectedIndex = -1;
+            this.ListBoxHotDrinks.SelectedItem = null;
+            this.ListBoxHotDrinks.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.ListBoxHotDrinks.SelectedItemColor = System.Drawing.Color.White;
+            this.ListBoxHotDrinks.SelectedText = null;
+            this.ListBoxHotDrinks.SelectedValue = null;
+            this.ListBoxHotDrinks.ShowBorder = false;
+            this.ListBoxHotDrinks.ShowScrollBar = false;
+            this.ListBoxHotDrinks.Size = new System.Drawing.Size(303, 276);
+            this.ListBoxHotDrinks.Style = MetroSet_UI.Enums.Style.Dark;
+            this.ListBoxHotDrinks.StyleManager = null;
+            this.ListBoxHotDrinks.TabIndex = 3;
+            this.ListBoxHotDrinks.ThemeAuthor = "Narwin";
+            this.ListBoxHotDrinks.ThemeName = "MetroDark";
             // 
             // SalesScreen
             // 
@@ -404,7 +505,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1014, 718);
-            this.Controls.Add(this.metroSetTabControl1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblChange);
             this.Controls.Add(this.lblAmounPaid);
             this.Controls.Add(this.mtbxAmountPaid);
@@ -423,8 +524,12 @@
             this.Text = "SALES MENU";
             this.TextColor = System.Drawing.Color.White;
             this.ThemeName = "MetroDark";
-            this.metroSetTabControl1.ResumeLayout(false);
-            this.tpPopularItems.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.SalesScreen_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,16 +544,19 @@
         private Label lblCustomerName;
         private MetroSet_UI.Controls.MetroSetTextBox mtbxCustomerName;
         private Label lblItems;
-        private ListBox lbxItemList;
         private MetroSet_UI.Controls.MetroSetRichTextBox rtbxReceipt;
         private Label lblReceipt;
         private Label lblAmounPaid;
         private MetroSet_UI.Controls.MetroSetTextBox mtbxAmountPaid;
         private Label lblChange;
-        private MetroSet_UI.Controls.MetroSetTabControl metroSetTabControl1;
-        private TabPage tpPopularItems;
-        private TabPage tpFood;
-        private TabPage tpColdDrinks;
-        private TabPage tpHotDrinks;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private MetroSet_UI.Controls.MetroSetListBox ListBoxPopular;
+        private TabPage tabPage2;
+        private MetroSet_UI.Controls.MetroSetListBox ListBoxFood;
+        private TabPage tabPage3;
+        private MetroSet_UI.Controls.MetroSetListBox ListBoxColdDrinks;
+        private TabPage tabPage4;
+        private MetroSet_UI.Controls.MetroSetListBox ListBoxHotDrinks;
     }
 }
