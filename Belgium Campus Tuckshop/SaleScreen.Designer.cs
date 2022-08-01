@@ -50,11 +50,15 @@
             this.ListBoxColdDrinks = new MetroSet_UI.Controls.MetroSetListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ListBoxHotDrinks = new MetroSet_UI.Controls.MetroSetListBox();
+            this.setNumeric = new System.Windows.Forms.NumericUpDown();
+            this.lblNumSet = new MetroSet_UI.Controls.MetroSetLabel();
+            this.mtxRingUp = new MetroSet_UI.Controls.MetroSetButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.setNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // mbtnRemove
@@ -122,7 +126,7 @@
             this.mbtnNext.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnNext.HoverTextColor = System.Drawing.Color.White;
             this.mbtnNext.IsDerivedStyle = true;
-            this.mbtnNext.Location = new System.Drawing.Point(727, 650);
+            this.mbtnNext.Location = new System.Drawing.Point(818, 650);
             this.mbtnNext.Name = "mbtnNext";
             this.mbtnNext.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mbtnNext.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -149,7 +153,7 @@
             this.mbtnPay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mbtnPay.HoverTextColor = System.Drawing.Color.White;
             this.mbtnPay.IsDerivedStyle = true;
-            this.mbtnPay.Location = new System.Drawing.Point(478, 650);
+            this.mbtnPay.Location = new System.Drawing.Point(623, 650);
             this.mbtnPay.Name = "mbtnPay";
             this.mbtnPay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mbtnPay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -164,6 +168,7 @@
             this.mbtnPay.Text = "Complete Transaction";
             this.mbtnPay.ThemeAuthor = "Narwin";
             this.mbtnPay.ThemeName = "MetroDark";
+            this.mbtnPay.Click += new System.EventHandler(this.mbtnPay_Click);
             // 
             // lblCustomerName
             // 
@@ -310,6 +315,7 @@
             this.mtbxAmountPaid.ThemeName = "MetroDark";
             this.mtbxAmountPaid.UseSystemPasswordChar = false;
             this.mtbxAmountPaid.WatermarkText = "100.00";
+            this.mtbxAmountPaid.Click += new System.EventHandler(this.mtbxAmountPaid_Click);
             // 
             // lblChange
             // 
@@ -344,7 +350,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(299, 267);
+            this.tabPage1.Size = new System.Drawing.Size(299, 273);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -385,7 +391,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(299, 267);
+            this.tabPage2.Size = new System.Drawing.Size(299, 273);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -418,6 +424,7 @@
             this.ListBoxFood.TabIndex = 1;
             this.ListBoxFood.ThemeAuthor = "Narwin";
             this.ListBoxFood.ThemeName = "MetroDark";
+            this.ListBoxFood.SelectedIndexChanged += new MetroSet_UI.Controls.MetroSetListBox.SelectedIndexChangedEventHandler(this.ListBoxFood_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -425,7 +432,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(299, 267);
+            this.tabPage3.Size = new System.Drawing.Size(299, 273);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -458,6 +465,7 @@
             this.ListBoxColdDrinks.TabIndex = 2;
             this.ListBoxColdDrinks.ThemeAuthor = "Narwin";
             this.ListBoxColdDrinks.ThemeName = "MetroDark";
+            this.ListBoxColdDrinks.SelectedIndexChanged += new MetroSet_UI.Controls.MetroSetListBox.SelectedIndexChangedEventHandler(this.ListBoxColdDrinks_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -498,6 +506,74 @@
             this.ListBoxHotDrinks.TabIndex = 3;
             this.ListBoxHotDrinks.ThemeAuthor = "Narwin";
             this.ListBoxHotDrinks.ThemeName = "MetroDark";
+            this.ListBoxHotDrinks.SelectedIndexChanged += new MetroSet_UI.Controls.MetroSetListBox.SelectedIndexChangedEventHandler(this.ListBoxHotDrinks_SelectedIndexChanged);
+            // 
+            // setNumeric
+            // 
+            this.setNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.setNumeric.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.setNumeric.Location = new System.Drawing.Point(138, 566);
+            this.setNumeric.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.setNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.setNumeric.Name = "setNumeric";
+            this.setNumeric.Size = new System.Drawing.Size(120, 27);
+            this.setNumeric.TabIndex = 35;
+            this.setNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblNumSet
+            // 
+            this.lblNumSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNumSet.IsDerivedStyle = true;
+            this.lblNumSet.Location = new System.Drawing.Point(20, 570);
+            this.lblNumSet.Name = "lblNumSet";
+            this.lblNumSet.Size = new System.Drawing.Size(100, 23);
+            this.lblNumSet.Style = MetroSet_UI.Enums.Style.Light;
+            this.lblNumSet.StyleManager = null;
+            this.lblNumSet.TabIndex = 36;
+            this.lblNumSet.Text = "Quantity";
+            this.lblNumSet.ThemeAuthor = "Narwin";
+            this.lblNumSet.ThemeName = "MetroLite";
+            this.lblNumSet.Click += new System.EventHandler(this.metroSetLabel1_Click);
+            // 
+            // mtxRingUp
+            // 
+            this.mtxRingUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtxRingUp.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mtxRingUp.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mtxRingUp.DisabledForeColor = System.Drawing.Color.Gray;
+            this.mtxRingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mtxRingUp.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mtxRingUp.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.mtxRingUp.HoverTextColor = System.Drawing.Color.White;
+            this.mtxRingUp.IsDerivedStyle = true;
+            this.mtxRingUp.Location = new System.Drawing.Point(421, 650);
+            this.mtxRingUp.Name = "mtxRingUp";
+            this.mtxRingUp.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mtxRingUp.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mtxRingUp.NormalTextColor = System.Drawing.Color.White;
+            this.mtxRingUp.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.mtxRingUp.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.mtxRingUp.PressTextColor = System.Drawing.Color.White;
+            this.mtxRingUp.Size = new System.Drawing.Size(159, 53);
+            this.mtxRingUp.Style = MetroSet_UI.Enums.Style.Custom;
+            this.mtxRingUp.StyleManager = null;
+            this.mtxRingUp.TabIndex = 37;
+            this.mtxRingUp.Text = "Ring Up ";
+            this.mtxRingUp.ThemeAuthor = "Narwin";
+            this.mtxRingUp.ThemeName = "MetroDark";
+            this.mtxRingUp.Click += new System.EventHandler(this.metroSetButton1_Click);
             // 
             // SalesScreen
             // 
@@ -505,6 +581,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1014, 718);
+            this.Controls.Add(this.mtxRingUp);
+            this.Controls.Add(this.lblNumSet);
+            this.Controls.Add(this.setNumeric);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblChange);
             this.Controls.Add(this.lblAmounPaid);
@@ -530,6 +609,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.setNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,5 +638,8 @@
         private MetroSet_UI.Controls.MetroSetListBox ListBoxColdDrinks;
         private TabPage tabPage4;
         private MetroSet_UI.Controls.MetroSetListBox ListBoxHotDrinks;
+        private NumericUpDown setNumeric;
+        private MetroSet_UI.Controls.MetroSetLabel lblNumSet;
+        private MetroSet_UI.Controls.MetroSetButton mtxRingUp;
     }
 }

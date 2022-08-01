@@ -14,6 +14,9 @@ namespace Belgium_Campus_Tuckshop
 {
     public partial class SalesScreen : MetroSetForm
     {
+
+
+
         public SalesScreen()
         {
             InitializeComponent();
@@ -25,17 +28,59 @@ namespace Belgium_Campus_Tuckshop
 
         }
 
+        // Calls up the GetSelectedItem method to display selected item details.
         private void metroSetListBox1_SelectedIndexChanged(object sender)
         {
-            rtbxReceipt.Text += ListBoxPopular.SelectedItem.ToString();
+            string ItemName = "";
+            int ItemQuantity = 0;
+            bool validInput = false;
+
+            ItemName = ListBoxPopular.SelectedItem.ToString();
+            ItemQuantity = Convert.ToInt32(setNumeric.Value);
+
+            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName,ItemQuantity));
+
+        }
+
+        private void ListBoxFood_SelectedIndexChanged(object sender)
+        {
+            string ItemName = "";
+            int ItemQuantity = 0;
+            bool validInput = false;
+
+            ItemName = ListBoxFood.SelectedItem.ToString();
+            ItemQuantity = Convert.ToInt32(setNumeric.Value);
+
+            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+        }
+
+        private void ListBoxColdDrinks_SelectedIndexChanged(object sender)
+        {
+            string ItemName = "";
+            int ItemQuantity = 0;
+            bool validInput = false;
+
+            ItemName = ListBoxColdDrinks.SelectedItem.ToString();
+            ItemQuantity = Convert.ToInt32(setNumeric.Value);
+
+            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+        }
+
+        private void ListBoxHotDrinks_SelectedIndexChanged(object sender)
+        {
+            string ItemName = "";
+            int ItemQuantity = 0;
+            bool validInput = false;
+
+            ItemName = ListBoxHotDrinks.SelectedItem.ToString();
+            ItemQuantity = Convert.ToInt32(setNumeric.Value);
+
+            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab == tabControl1.TabPages["tabPage1"])
-            {
-                MessageBox.Show("boi");
-            }
+
         }
 
         private void SalesScreen_Load(object sender, EventArgs e)
@@ -69,13 +114,58 @@ namespace Belgium_Campus_Tuckshop
             {
                 ListBoxHotDrinks.Items.Add(item.ProductName);
             }
+            string Layout = "{0,-45}{1,10}{2,10}{3,10}";
 
-
-
-
-
-
+            rtbxReceipt.Text = "";
+            rtbxReceipt.Text = String.Format(Layout,"Item Name","Base Price","Qty","Price");
+            
+            
 
         }
+
+        private void metroSetLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mbtnPay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbxAmountPaid_Click(object sender, EventArgs e)
+        {
+            string AmountPaid;
+
+            try
+            {
+                AmountPaid = mtbxAmountPaid.Text;
+            }
+            catch
+            {
+                MessageBox.Show("Invalid entry,please enter in a valid amount");
+                mtbxAmountPaid.Focus();
+                AmountPaid = mtbxAmountPaid.Text;
+            }
+            finally
+            {
+                MessageBox.Show("Valid entry");
+            }
+        }
+
+        // Rings up the bill
+        private void metroSetButton1_Click(object sender, EventArgs e)
+        {
+            double AmountOwed = 0;
+            double SumTotal = SalesOutput.SumTotal.TotalSum;
+            double Vat = 0;
+
+            Vat = Vat + (SumTotal * (15 / 100));
+
+            rtbxReceipt.AppendText("\nTotal R " + SalesOutput.SumTotal.TotalSum);
+            rtbxReceipt.AppendText("\nVat R" + (Vat));
+        }
+
+
     }
 }
