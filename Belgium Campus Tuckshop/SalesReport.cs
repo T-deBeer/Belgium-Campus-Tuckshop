@@ -33,6 +33,7 @@ namespace Belgium_Campus_Tuckshop
                     string date = DateTime.Now.ToString();
 
                     ClassLibrary.SqliteDataAccess.DeleteSale(date, name);
+                    lbxCustomers.Items.Remove(lbxCustomers.SelectedIndex);
                 }
             }
             catch (Exception ex)
@@ -142,6 +143,7 @@ namespace Belgium_Campus_Tuckshop
             {
                 List<ClassLibrary.SaleModel> listSales = ClassLibrary.SqliteDataAccess.LoadAllSales();
 
+                lblReceipt.Text = "Receipt for " + lbxCustomers.GetItemText(lbxCustomers.SelectedItem);
                 rtbxReceipt.ResetText();
                 rtbxReceipt.Text += "ITEM NAME \tBASE PRICE \tQTY \tPRICE";
                 rtbxReceipt.Text += "\n-----------------------------------------";
