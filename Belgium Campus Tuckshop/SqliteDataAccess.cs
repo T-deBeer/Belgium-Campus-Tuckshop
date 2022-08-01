@@ -167,6 +167,15 @@ namespace ClassLibrary
             }
         }
 
+        public static List<SaleModel> LoadMonthlySales(string datePart)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = database.Query<SaleModel>($"SELECT * FROM SalesReport WHERE SaleDate LIKE '%{datePart}'", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
         /// <summary>
         /// Writes a new Item of class ItemModel into
         /// the Products table of the Database
