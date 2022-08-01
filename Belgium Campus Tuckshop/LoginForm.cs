@@ -6,17 +6,10 @@ namespace Belgium_Campus_Tuckshop
     public partial class LoginForm : MetroSetForm
     {
         List<PersonModel> cashierList = new List<PersonModel>();
-        List<ItemModel> ItemList = new List<ItemModel>();
         public LoginForm()
         {
             InitializeComponent();
             LoadCashiers();
-            ItemList = SqliteDataAccess.LoadAllItems();
-
-            foreach (var item in ItemList)
-            {
-                MessageBox.Show(item.ProductName);
-            }
         }
 
         private void LoadCashiers()

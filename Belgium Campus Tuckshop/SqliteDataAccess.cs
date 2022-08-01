@@ -12,6 +12,12 @@ namespace ClassLibrary
 {
     public class SqliteDataAccess
     {
+
+        /// <summary>
+        /// Creates a list of objects of the class of PersonModel,
+        /// the list is populated by the Cashiers Table in the SQLite Database
+        /// </summary>
+        /// <returns> List<PersonModel>() </returns>
         public static List<PersonModel> LoadPeople()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -21,6 +27,12 @@ namespace ClassLibrary
             }
         }
 
+
+        /// <summary>
+        /// Creates a list of objects of the class of ItemModel,
+        /// the list is populated by the Products Table in the SQLite Database
+        /// </summary>
+        /// <returns> List<ItemModel>() </returns>
         public static List<ItemModel> LoadAllItems()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -30,6 +42,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Creates a list of objects of the class of ItemModel,
+        /// the list is populated by the Products Table in the SQLite Database,
+        /// it only returns the Products that are considered popular
+        /// </summary>
+        /// <returns> List<ItemModel>() </returns>
         public static List<ItemModel> LoadPopularItems()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -39,6 +57,13 @@ namespace ClassLibrary
             }
         }
 
+
+        /// <summary>
+        /// Creates a list of objects of the class of ItemModel,
+        /// the list is populated by the Products Table in the SQLite Database,
+        /// it only returns the Products that are classed as Food
+        /// </summary>
+        /// <returns> List<ItemModel>() </returns>
         public static List<ItemModel> LoadFoodItems()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -48,6 +73,13 @@ namespace ClassLibrary
             }
         }
 
+
+        /// <summary>
+        /// Creates a list of objects of the class of ItemModel,
+        /// the list is populated by the Products Table in the SQLite Database,
+        /// it only returns the Products that are classed as Drinks
+        /// </summary>
+        /// <returns> List<ItemModel>() </returns>
         public static List<ItemModel> LoadDrinksItems()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -57,6 +89,10 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Writes a Sale of class SaleModel into the
+        /// SalesReport table of the Database
+        /// </summary>
         public static void InsertSale(SaleModel sale)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -65,6 +101,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Creates a list of objects of the class of SaleModel,
+        /// the list is populated by the SalesReport Table in the SQLite Database
+        /// it only returns Sales made on the date that is entered as a parameter.
+        /// </summary>
+        /// <returns> List<SaleModel>() </returns>
         public static List<SaleModel> LoadSalesByDate(string date)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -74,6 +116,12 @@ namespace ClassLibrary
             }
         }
 
+
+        /// <summary>
+        /// Creates a list of objects of the class of SaleModel,
+        /// the list is populated by the SalesReport Table in the SQLite Database
+        /// </summary>
+        /// <returns> List<SaleModel>() </returns>
         public static List<SaleModel> LoadAllSales()
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
@@ -83,22 +131,33 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Writes a new Item of class ItemModel into
+        /// the Products table of the Database
+        /// </summary>
         public static void AddNewItem(ItemModel item)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("INSERT INTO Products (ProductName, ProductType, ProductCost, Popular, ItemDescription) VALUES (@Name, @Type, @Price, @Popular @Description)", item);
+                database.Execute("INSERT INTO Products (ProductName, ProductType, ProductCost, Popular, ItemDescription) VALUES (@ProductName, @ProductType, @ProductCost, @Popular @ItemDescription)", item);
             }
         }
 
+        /// <summary>
+        /// Updates an exsisting record in the Products table of the database
+        /// by using an item from class ItemModel 
+        /// </summary>
         public static void UpdateItem(ItemModel item, string name)
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("UPDATE Products SET ProductName = @Name, ProductType = @Type, ProductCost = @Price, Popular = @Popular, ItemDescription = @Description WHERE ProductName = @Name", item);
+                database.Execute("UPDATE Products SET ProductName = @ProductName, ProductType = @ProductType, ProductCost = @ProductCost, Popular = @Popular, ItemDescription = @ItemDescription WHERE ProductName = @ProductName", item);
             }
         }
 
+        /// <summary>
+        /// Used to get the connection string for the database in the App.config file
+        /// </summary>
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
