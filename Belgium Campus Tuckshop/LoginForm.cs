@@ -10,6 +10,7 @@ namespace Belgium_Campus_Tuckshop
         {
             InitializeComponent();
             LoadCashiers();
+            SqliteDataAccess.DeleteSale(DateOnly.FromDateTime(DateTime.Today).ToString(),"Yandre");
         }
 
         private void LoadCashiers()
