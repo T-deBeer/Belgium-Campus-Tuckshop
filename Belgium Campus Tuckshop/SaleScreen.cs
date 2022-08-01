@@ -38,7 +38,10 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxPopular.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName,ItemQuantity));
+            //rtbxReceipt.AppendText("\n" + );
+            ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+
+
 
         }
 
@@ -51,7 +54,8 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxFood.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+            // rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+            ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
         private void ListBoxColdDrinks_SelectedIndexChanged(object sender)
@@ -63,7 +67,8 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxColdDrinks.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+            // rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+            ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
         private void ListBoxHotDrinks_SelectedIndexChanged(object sender)
@@ -75,7 +80,7 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxHotDrinks.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
+            ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,10 +119,9 @@ namespace Belgium_Campus_Tuckshop
             {
                 ListBoxHotDrinks.Items.Add(item.ProductName);
             }
-            string Layout = "{0,-45}{1,10}{2,10}{3,10}";
 
-            rtbxReceipt.Text = "";
-            rtbxReceipt.Text = String.Format(Layout,"Item Name","Base Price","Qty","Price");
+            ListBoxOutput.Items.Add("Item Name\tBase Price\tQty\tPrice");
+            ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
             
             
 
@@ -162,10 +166,14 @@ namespace Belgium_Campus_Tuckshop
 
             Vat = Vat + (SumTotal * (15 / 100));
 
-            rtbxReceipt.AppendText("\nTotal R " + SalesOutput.SumTotal.TotalSum);
-            rtbxReceipt.AppendText("\nVat R" + (Vat));
+            ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
+            ListBoxOutput.Items.Add("Total:  R" + SalesOutput.SumTotal.TotalSum);
+            ListBoxOutput.Items.Add("Vat: R" +  Vat);
         }
 
-
+        private void mbtnRemove_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

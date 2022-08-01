@@ -57,15 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbxReceipt.Text" xml:space="preserve">
-    <value>ITEM NAME	BASE PRICE	QTY	PRICE
----------------------------------------------------------------
-Tramazini		R 28.00		2	R 56.00
-Bar-One		R 11.99		2	R 23.80
-Buddy Coke		R 9.80		1	R 9.80
-Buddy Cream Soda	R 9.80		1	R 9.80
----------------------------------------------------------------
-TOTAL		R 99.40
-VAT		R 14.91 </value>
-  </data>
 </root>
