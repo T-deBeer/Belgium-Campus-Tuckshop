@@ -191,6 +191,22 @@ namespace ClassLibrary
             }
         }
 
+        public static void DeleteSale(string date, string name)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                database.Execute($"DELETE FROM SalesRecord WHERE SaleDate = {date} AND CustomerName = {name}");
+            }
+        }
+
+        public static void DeleteItem(string name)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+                database.Execute($"DELETE FROM Products WHERE ProductName = {name}");
+            }
+        }
+
         /// <summary>
         /// Used to get the connection string for the database in the App.config file
         /// </summary>
