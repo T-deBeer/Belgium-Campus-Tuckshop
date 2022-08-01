@@ -62,6 +62,7 @@
             this.mbtnExit.Text = "Exit";
             this.mbtnExit.ThemeAuthor = "Narwin";
             this.mbtnExit.ThemeName = "MetroDark";
+            this.mbtnExit.Click += new System.EventHandler(this.mbtnExit_Click);
             // 
             // mbtnSalesMenu
             // 
@@ -90,6 +91,7 @@
             this.mbtnSalesMenu.Text = "Sales Menu";
             this.mbtnSalesMenu.ThemeAuthor = "Narwin";
             this.mbtnSalesMenu.ThemeName = "MetroDark";
+            this.mbtnSalesMenu.Click += new System.EventHandler(this.mbtnSalesMenu_Click);
             // 
             // mbtnSignOut
             // 
@@ -118,6 +120,7 @@
             this.mbtnSignOut.Text = "Sign Out";
             this.mbtnSignOut.ThemeAuthor = "Narwin";
             this.mbtnSignOut.ThemeName = "MetroDark";
+            this.mbtnSignOut.Click += new System.EventHandler(this.mbtnSignOut_Click);
             // 
             // mbtnItemsMenu
             // 
@@ -146,6 +149,7 @@
             this.mbtnItemsMenu.Text = "Edit or Add Items";
             this.mbtnItemsMenu.ThemeAuthor = "Narwin";
             this.mbtnItemsMenu.ThemeName = "MetroDark";
+            this.mbtnItemsMenu.Click += new System.EventHandler(this.mbtnItemsMenu_Click);
             // 
             // mbtnSalesHistory
             // 
@@ -174,6 +178,7 @@
             this.mbtnSalesHistory.Text = "View Sales History";
             this.mbtnSalesHistory.ThemeAuthor = "Narwin";
             this.mbtnSalesHistory.ThemeName = "MetroDark";
+            this.mbtnSalesHistory.Click += new System.EventHandler(this.mbtnSalesHistory_Click);
             // 
             // UserMenu
             // 

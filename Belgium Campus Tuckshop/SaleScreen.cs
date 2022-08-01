@@ -15,8 +15,6 @@ namespace Belgium_Campus_Tuckshop
     public partial class SalesScreen : MetroSetForm
     {
 
-
-
         public SalesScreen()
         {
             InitializeComponent();
@@ -41,8 +39,6 @@ namespace Belgium_Campus_Tuckshop
             //rtbxReceipt.AppendText("\n" + );
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
 
-
-
         }
 
         private void ListBoxFood_SelectedIndexChanged(object sender)
@@ -54,7 +50,6 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxFood.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            // rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
@@ -67,7 +62,6 @@ namespace Belgium_Campus_Tuckshop
             ItemName = ListBoxColdDrinks.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            // rtbxReceipt.AppendText("\n" + SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
@@ -134,46 +128,64 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnPay_Click(object sender, EventArgs e)
         {
+            int i = 0;
+            string AmountPaid;
+            bool result = false;
+            double PaidAmount,ChangeOwed = 0;
 
+            AmountPaid = mtbxAmountPaid.Text;
+            result = int.TryParse(AmountPaid, out i);
+
+                if ((result ==  true) )
+                {
+                    PaidAmount = Convert.ToDouble(AmountPaid);
+
+                    if (PaidAmount >= SalesOutput.SumTotal.TotalSum)
+                    {
+                        ChangeOwed = PaidAmount - SalesOutput.SumTotal.TotalSum;
+                        lblChange.Text = "Change required: R" + Math.Round(ChangeOwed,2);
+                    }
+                    else
+                    {
+                    MessageBox.Show("Invalid Amount entered");
+                    }      
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a number value ");
+                    mtbxAmountPaid.Focus();
+                }
+            
         }
 
         private void mtbxAmountPaid_Click(object sender, EventArgs e)
         {
-            string AmountPaid;
 
-            try
-            {
-                AmountPaid = mtbxAmountPaid.Text;
-            }
-            catch
-            {
-                MessageBox.Show("Invalid entry,please enter in a valid amount");
-                mtbxAmountPaid.Focus();
-                AmountPaid = mtbxAmountPaid.Text;
-            }
-            finally
-            {
-                MessageBox.Show("Valid entry");
-            }
         }
 
         // Rings up the bill
         private void metroSetButton1_Click(object sender, EventArgs e)
         {
-            double AmountOwed = 0;
-            double SumTotal = SalesOutput.SumTotal.TotalSum;
-            double Vat = 0;
-
-            Vat = Vat + (SumTotal * (15 / 100));
+            double SumTotal = Math.Round(SalesOutput.SumTotal.TotalSum,2) ; 
 
             ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
-            ListBoxOutput.Items.Add("Total:  R" + SalesOutput.SumTotal.TotalSum);
-            ListBoxOutput.Items.Add("Vat: R" +  Vat);
+            ListBoxOutput.Items.Add("Total:  R" + SumTotal);
+      
         }
 
-        private void mbtnRemove_Click(object sender, EventArgs e)
+    
+
+        private void mbtnNext_Click(object sender, EventArgs e)
         {
-          
+            
+        }
+
+        private void mbtnBack_Click(object sender, EventArgs e)
+        {
+            UserMenu myUserForm = new UserMenu();
+            myUserForm.ShowDialog();
+            
+            this.Close();
         }
     }
 }

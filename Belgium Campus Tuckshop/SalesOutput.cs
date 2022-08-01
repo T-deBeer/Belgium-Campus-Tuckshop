@@ -46,5 +46,7 @@ namespace Belgium_Campus_Tuckshop
         {
             public static double TotalSum;
         }
+
+        
     }
 }

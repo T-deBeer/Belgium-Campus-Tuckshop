@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mbtnRemove = new MetroSet_UI.Controls.MetroSetButton();
             this.mbtnBack = new MetroSet_UI.Controls.MetroSetButton();
             this.mbtnNext = new MetroSet_UI.Controls.MetroSetButton();
             this.mbtnPay = new MetroSet_UI.Controls.MetroSetButton();
@@ -60,34 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.setNumeric)).BeginInit();
             this.SuspendLayout();
             // 
-            // mbtnRemove
-            // 
-            this.mbtnRemove.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mbtnRemove.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.mbtnRemove.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.mbtnRemove.DisabledForeColor = System.Drawing.Color.Gray;
-            this.mbtnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mbtnRemove.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.mbtnRemove.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.mbtnRemove.HoverTextColor = System.Drawing.Color.White;
-            this.mbtnRemove.IsDerivedStyle = true;
-            this.mbtnRemove.Location = new System.Drawing.Point(207, 650);
-            this.mbtnRemove.Name = "mbtnRemove";
-            this.mbtnRemove.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.mbtnRemove.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.mbtnRemove.NormalTextColor = System.Drawing.Color.White;
-            this.mbtnRemove.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.mbtnRemove.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.mbtnRemove.PressTextColor = System.Drawing.Color.White;
-            this.mbtnRemove.Size = new System.Drawing.Size(159, 53);
-            this.mbtnRemove.Style = MetroSet_UI.Enums.Style.Custom;
-            this.mbtnRemove.StyleManager = null;
-            this.mbtnRemove.TabIndex = 24;
-            this.mbtnRemove.Text = "Remove Item From";
-            this.mbtnRemove.ThemeAuthor = "Narwin";
-            this.mbtnRemove.ThemeName = "MetroDark";
-            this.mbtnRemove.Click += new System.EventHandler(this.mbtnRemove_Click);
-            // 
             // mbtnBack
             // 
             this.mbtnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -99,7 +70,7 @@
             this.mbtnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnBack.HoverTextColor = System.Drawing.Color.White;
             this.mbtnBack.IsDerivedStyle = true;
-            this.mbtnBack.Location = new System.Drawing.Point(20, 650);
+            this.mbtnBack.Location = new System.Drawing.Point(33, 650);
             this.mbtnBack.Name = "mbtnBack";
             this.mbtnBack.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.mbtnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -114,6 +85,7 @@
             this.mbtnBack.Text = "Back To Menu";
             this.mbtnBack.ThemeAuthor = "Narwin";
             this.mbtnBack.ThemeName = "MetroDark";
+            this.mbtnBack.Click += new System.EventHandler(this.mbtnBack_Click);
             // 
             // mbtnNext
             // 
@@ -141,6 +113,7 @@
             this.mbtnNext.Text = "Next Transaction";
             this.mbtnNext.ThemeAuthor = "Narwin";
             this.mbtnNext.ThemeName = "MetroDark";
+            this.mbtnNext.Click += new System.EventHandler(this.mbtnNext_Click);
             // 
             // mbtnPay
             // 
@@ -525,7 +498,7 @@
             this.mtxRingUp.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.mtxRingUp.HoverTextColor = System.Drawing.Color.White;
             this.mtxRingUp.IsDerivedStyle = true;
-            this.mtxRingUp.Location = new System.Drawing.Point(421, 650);
+            this.mtxRingUp.Location = new System.Drawing.Point(434, 650);
             this.mtxRingUp.Name = "mtxRingUp";
             this.mtxRingUp.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.mtxRingUp.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -544,7 +517,7 @@
             // 
             // ListBoxOutput
             // 
-            this.ListBoxOutput.BackColor = System.Drawing.Color.White;
+            this.ListBoxOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ListBoxOutput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ListBoxOutput.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ListBoxOutput.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -589,7 +562,6 @@
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.mtbxCustomerName);
             this.Controls.Add(this.lblItems);
-            this.Controls.Add(this.mbtnRemove);
             this.Controls.Add(this.mbtnBack);
             this.Controls.Add(this.mbtnNext);
             this.Controls.Add(this.mbtnPay);
@@ -612,8 +584,6 @@
         }
 
         #endregion
-
-        private MetroSet_UI.Controls.MetroSetButton mbtnRemove;
         private MetroSet_UI.Controls.MetroSetButton mbtnBack;
         private MetroSet_UI.Controls.MetroSetButton mbtnNext;
         private MetroSet_UI.Controls.MetroSetButton mbtnPay;

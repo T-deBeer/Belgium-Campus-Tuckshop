@@ -17,5 +17,39 @@ namespace Belgium_Campus_Tuckshop
         {
             InitializeComponent();
         }
+
+        private void mbtnSalesMenu_Click(object sender, EventArgs e)
+        {
+            SalesScreen salesScreenForm = new SalesScreen();
+            salesScreenForm.ShowDialog();
+            
+            this.Close();
+        }
+
+        private void mbtnItemsMenu_Click(object sender, EventArgs e)
+        {
+            ItemsForms menuItemsForms = new ItemsForms();
+            menuItemsForms.ShowDialog();
+            this.Close();
+        }
+
+        private void mbtnSalesHistory_Click(object sender, EventArgs e)
+        {
+            SalesReport SalesHistory = new SalesReport();
+            SalesHistory.ShowDialog();
+            this.Close();
+        }
+
+        private void mbtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mbtnSignOut_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm(); 
+            loginForm.ShowDialog();
+            this.Close();
+        }
     }
 }
