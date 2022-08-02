@@ -33,7 +33,7 @@ namespace Belgium_Campus_Tuckshop
                 {
                     // Gets index, name, and date of sale customer to delete 
 
-                    string name = lbxCustomers.GetItemText(lbxCustomers.SelectedIndex);
+                    string name = lbxCustomers.SelectedItem.ToString();
                     string date = dateTimePicker1.Value.ToString("MM/dd/yyyy"); 
 
                     //Call the delete function
