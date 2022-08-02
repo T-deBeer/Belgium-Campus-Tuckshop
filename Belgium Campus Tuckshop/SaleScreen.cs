@@ -23,12 +23,16 @@ namespace Belgium_Campus_Tuckshop
 
         private void mtbxCustomerName_Click(object sender, EventArgs e)
         {
-
+            
         }
+
+
+
 
         // Calls up the GetSelectedItem method to display selected item details for popular Items.
         private void metroSetListBox1_SelectedIndexChanged(object sender)
         {
+            mtxRingUp.Enabled = true;
             string ItemName = "";
             int ItemQuantity = 0;
 
@@ -43,6 +47,7 @@ namespace Belgium_Campus_Tuckshop
 
         private void ListBoxFood_SelectedIndexChanged(object sender)
         {
+            mtxRingUp.Enabled = true;
             string ItemName = "";
             int ItemQuantity = 0;
 
@@ -55,6 +60,7 @@ namespace Belgium_Campus_Tuckshop
         // Calls up the GetSelectedItem method to display selected item details for Cold Drinks.
         private void ListBoxColdDrinks_SelectedIndexChanged(object sender)
         {
+            mtxRingUp.Enabled = true;
             string ItemName = "";
             int ItemQuantity = 0;
 
@@ -68,6 +74,7 @@ namespace Belgium_Campus_Tuckshop
 
         private void ListBoxHotDrinks_SelectedIndexChanged(object sender)
         {
+            mtxRingUp.Enabled = true;
             string ItemName = "";
             int ItemQuantity = 0;
 
@@ -85,6 +92,12 @@ namespace Belgium_Campus_Tuckshop
         private void SalesScreen_Load(object sender, EventArgs e)
         {
             //Initializes List Boxes
+
+            mtbxCustomerName.Focus();
+            mtxRingUp.Enabled = false;
+            mbtnPay.Enabled = false;
+            mbtnNext.Enabled = false;
+            mtbxAmountPaid.Enabled = false;
 
             List<ItemModel> PopularItemList = SqliteDataAccess.LoadPopularItems();
 
@@ -113,9 +126,9 @@ namespace Belgium_Campus_Tuckshop
             {
                 ListBoxHotDrinks.Items.Add(item.ProductName);
             }
-
-           // ListBoxOutput.Items.Add("Item Name\tBase Price\tQty\tPrice");
             ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
+
+
 
         }
 
@@ -130,6 +143,8 @@ namespace Belgium_Campus_Tuckshop
             string AmountPaid;
             bool result = false;
             double PaidAmount,ChangeOwed = 0;
+
+            mbtnNext.Enabled = true;
 
             AmountPaid = mtbxAmountPaid.Text;
             result = int.TryParse(AmountPaid, out i);
@@ -163,7 +178,9 @@ namespace Belgium_Campus_Tuckshop
         // Rings up the bill
         private void metroSetButton1_Click(object sender, EventArgs e)
         {
-            double SumTotal = Math.Round(SalesOutput.SumTotal.TotalSum,2) ; 
+            double SumTotal = Math.Round(SalesOutput.SumTotal.TotalSum,2) ;
+            mbtnPay.Enabled = true;
+            mtbxAmountPaid.Enabled = true;
 
             ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
             ListBoxOutput.Items.Add("Total:  R" + SumTotal);
@@ -176,7 +193,27 @@ namespace Belgium_Campus_Tuckshop
         {
             string CustomerName = "";
 
-            CustomerName = lblCustomerName.Text;
+            CustomerName = mtbxCustomerName.Text;
+            bool Result = CustomerName.All(char.IsLetter);
+
+
+            if (Result == true)
+            {
+                if (CustomerName != "")
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a customer name to continue");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Input , please enter the customer name");
+                mtbxCustomerName.Focus();
+            }
+
         }
 
         private void mbtnBack_Click(object sender, EventArgs e)
