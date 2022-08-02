@@ -212,7 +212,7 @@ namespace ClassLibrary
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute($"DELETE FROM Products WHERE ProductName = {name}");
+                database.Execute($"DELETE FROM Products WHERE ProductName = '{name}'");
             }
         }
 
