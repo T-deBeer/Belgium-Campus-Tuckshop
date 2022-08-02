@@ -72,12 +72,6 @@
             this.lbxCustomers.ForeColor = System.Drawing.Color.White;
             this.lbxCustomers.FormattingEnabled = true;
             this.lbxCustomers.ItemHeight = 16;
-            this.lbxCustomers.Items.AddRange(new object[] {
-            "Tiaan",
-            "Yandre",
-            "Shaedin",
-            "Johan",
-            "Roan"});
             this.lbxCustomers.Location = new System.Drawing.Point(15, 218);
             this.lbxCustomers.Name = "lbxCustomers";
             this.lbxCustomers.Size = new System.Drawing.Size(307, 242);

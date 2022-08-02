@@ -30,7 +30,7 @@ namespace Belgium_Campus_Tuckshop
                 if (Result == DialogResult.Yes)
                 {
                     string name = lbxCustomers.GetItemText(lbxCustomers.SelectedIndex);
-                    string date = DateTime.Now.ToString();
+                    string date = dateTimePicker1.Value.ToString("MM/dd/yyyy"); 
 
                     ClassLibrary.SqliteDataAccess.DeleteSale(date, name);
                     lbxCustomers.Items.Remove(lbxCustomers.SelectedIndex);
@@ -39,6 +39,26 @@ namespace Belgium_Campus_Tuckshop
             catch (Exception ex)
             {
                 MessageBox.Show("The following exception was raised: " + ex.Message);
+            }
+
+            try
+            {
+                List<ClassLibrary.SaleModel> listSales = ClassLibrary.SqliteDataAccess.LoadAllSales();
+                string Date = dateTimePicker1.Value.ToString("MM/dd/yyyy");
+                lbxCustomers.Items.Clear();
+                rtbxReceipt.Text = "";
+
+                foreach (var saleModel in listSales)
+                {
+                    if (saleModel.SaleDate == Date)
+                    {
+                        lbxCustomers.Items.Add(saleModel.CustomerName);
+                    }
+                }
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show("The following exception was raised: " + ex1.Message);
             }
         }
 
@@ -58,7 +78,7 @@ namespace Belgium_Campus_Tuckshop
 
                 foreach (var saleModel in listSales)
                 {
-                    if (saleModel.Date == Date)
+                    if (saleModel.SaleDate == Date)
                     {
                         lbxCustomers.Items.Add(saleModel.CustomerName);
                     }
@@ -72,7 +92,6 @@ namespace Belgium_Campus_Tuckshop
             try
             {
                 lblCustomers.Text = "Customers On " + DetermineMonth(Month) + " " + Day + " " + Year;
-                lbxCustomers.Items.Clear();
             }
             catch (FormatException ex2)
             {
@@ -168,13 +187,15 @@ namespace Belgium_Campus_Tuckshop
         {
             int Month;
             string Year;
+            string StringMonth;
 
             try
             {
                 Month = dateTimePicker1.Value.Month;
+                StringMonth = dateTimePicker1.Value.ToString("MM");
                 Year = (dateTimePicker1.Value.Year.ToString());
 
-                List<ClassLibrary.SaleModel> salesList = ClassLibrary.SqliteDataAccess.LoadMonthlySales(Month.ToString(), Year);
+                List<ClassLibrary.SaleModel> salesList = ClassLibrary.SqliteDataAccess.LoadMonthlySales(StringMonth, Year);
 
                 rtbxReceipt.ResetText();
                 int amountSales = 0;
@@ -184,7 +205,8 @@ namespace Belgium_Campus_Tuckshop
 
                 foreach (var s in salesList)
                 {
-                    rtbxReceipt.Text += s.CustomerName + "\t" + s.Date + "\t";
+                    rtbxReceipt.Text += "\n" + s.CustomerName + "\t\t" + s.SaleDate;
+                    rtbxReceipt.Text += "\n-----------------------------------------";
                     amountSales++;
                 }
 
