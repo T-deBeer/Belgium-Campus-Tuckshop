@@ -29,7 +29,7 @@ namespace Belgium_Campus_Tuckshop
 
                 if (Result == DialogResult.Yes)
                 {
-                    string name = lbxCustomers.GetItemText(lbxCustomers.SelectedIndex);
+                    string name = lbxCustomers.SelectedItem.ToString();
                     string date = dateTimePicker1.Value.ToString("MM/dd/yyyy"); 
 
                     ClassLibrary.SqliteDataAccess.DeleteSale(date, name);
