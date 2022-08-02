@@ -9,7 +9,7 @@ namespace ClassLibrary
     public class SaleModel
     {
         public int ID { get; set; }
-        public string Date { get; set; }
+        public string SaleDate { get; set; }
         public string CustomerName { get; set; }
         public string Receipt { get; set; }
     }

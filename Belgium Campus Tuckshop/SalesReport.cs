@@ -56,7 +56,7 @@ namespace Belgium_Campus_Tuckshop
 
                 foreach (var saleModel in listDatedSales)
                 {
-                    if (dateTimePicker1.Value.ToString().Contains(saleModel.Date))
+                    if (dateTimePicker1.Value.ToString().Contains(saleModel.SaleDate))
                     {
                         lbxCustomers.Items.Add(saleModel.CustomerName);
                     }
@@ -184,7 +184,7 @@ namespace Belgium_Campus_Tuckshop
 
                 foreach (var s in salesList)
                 {
-                    rtbxReceipt.Text += s.CustomerName + "\t" + s.Date + "\t";
+                    rtbxReceipt.Text += s.CustomerName + "\t" + s.SaleDate + "\t";
                     amountSales++;
                 }
 
