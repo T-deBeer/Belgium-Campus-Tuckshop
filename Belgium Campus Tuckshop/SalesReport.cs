@@ -46,17 +46,19 @@ namespace Belgium_Campus_Tuckshop
         {
             rtbxReceipt.ResetText();
 
-            string Day = dateTimePicker1.Value.Day.ToString();
+            int Day = dateTimePicker1.Value.Day;
             int Month = dateTimePicker1.Value.Month;
-            string Year = dateTimePicker1.Value.Year.ToString();
+            int Year = dateTimePicker1.Value.Year;
+
+            string Date = dateTimePicker1.Value.ToString("MM/dd/yyyy");
 
             try
             {
-                List<ClassLibrary.SaleModel> listDatedSales = ClassLibrary.SqliteDataAccess.LoadSalesByDate(DateOnly.FromDateTime(DateTime.Today.Date).ToString());
+                List<ClassLibrary.SaleModel> listSales = ClassLibrary.SqliteDataAccess.LoadAllSales();
 
-                foreach (var saleModel in listDatedSales)
+                foreach (var saleModel in listSales)
                 {
-                    if (dateTimePicker1.Value.ToString().Contains(saleModel.Date))
+                    if (saleModel.Date == Date)
                     {
                         lbxCustomers.Items.Add(saleModel.CustomerName);
                     }
@@ -145,12 +147,10 @@ namespace Belgium_Campus_Tuckshop
 
                 lblReceipt.Text = "Receipt for " + lbxCustomers.GetItemText(lbxCustomers.SelectedItem);
                 rtbxReceipt.ResetText();
-                rtbxReceipt.Text += "ITEM NAME \tBASE PRICE \tQTY \tPRICE";
-                rtbxReceipt.Text += "\n-----------------------------------------";
 
                 foreach (ClassLibrary.SaleModel saleModel in listSales)
                 {
-                    if (lbxCustomers.GetItemText(lbxCustomers.SelectedIndex) == saleModel.CustomerName)
+                    if (lbxCustomers.SelectedItem.ToString() == saleModel.CustomerName)
                     {
                         rtbxReceipt.Text = saleModel.Receipt;
                     }
@@ -196,6 +196,14 @@ namespace Belgium_Campus_Tuckshop
             {
                 MessageBox.Show("The following exception was raised: " + ex.Message);
             }
+        }
+
+        private void mbtnBack_Click(object sender, EventArgs e)
+        {
+            UserMenu myUserForm = new UserMenu();
+            myUserForm.ShowDialog();
+
+            this.Hide();
         }
     }
 }

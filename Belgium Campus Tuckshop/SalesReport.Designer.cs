@@ -73,11 +73,11 @@
             this.lbxCustomers.FormattingEnabled = true;
             this.lbxCustomers.ItemHeight = 16;
             this.lbxCustomers.Items.AddRange(new object[] {
-            "Tiaan de Beer",
-            "Yandre Bekker",
-            "Shaedin Govender",
-            "Johan Van de Wetering",
-            "Roan Palm"});
+            "Tiaan",
+            "Yandre",
+            "Shaedin",
+            "Johan",
+            "Roan"});
             this.lbxCustomers.Location = new System.Drawing.Point(15, 218);
             this.lbxCustomers.Name = "lbxCustomers";
             this.lbxCustomers.Size = new System.Drawing.Size(307, 242);
@@ -186,6 +186,7 @@
             this.mbtnBack.Text = "Back To Menu";
             this.mbtnBack.ThemeAuthor = "Narwin";
             this.mbtnBack.ThemeName = "MetroDark";
+            this.mbtnBack.Click += new System.EventHandler(this.mbtnBack_Click);
             // 
             // mbtnAddItem
             // 
