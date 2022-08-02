@@ -184,7 +184,7 @@
             this.mtbxCustomerName.ThemeAuthor = "Narwin";
             this.mtbxCustomerName.ThemeName = "MetroDark";
             this.mtbxCustomerName.UseSystemPasswordChar = false;
-            this.mtbxCustomerName.WatermarkText = "Customer Name";
+            this.mtbxCustomerName.WatermarkText = "Enter Name to continue";
             this.mtbxCustomerName.Click += new System.EventHandler(this.mtbxCustomerName_Click);
             // 
             // lblItems
@@ -266,9 +266,9 @@
             this.lblChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblChange.Location = new System.Drawing.Point(478, 465);
             this.lblChange.Name = "lblChange";
-            this.lblChange.Size = new System.Drawing.Size(156, 16);
+            this.lblChange.Size = new System.Drawing.Size(119, 16);
             this.lblChange.TabIndex = 33;
-            this.lblChange.Text = "Change Required: R 0.60";
+            this.lblChange.Text = "Change Required: ";
             // 
             // tabControl1
             // 
