@@ -222,7 +222,7 @@ namespace Belgium_Campus_Tuckshop
                     sale = new SaleModel();
                     sale.CustomerName = CustomerName;
                     sale.Receipt = RecieptText;
-                    sale.Date = DateTime.Now.ToString("MM\\/dd\\/yyyy");
+                    sale.SaleDate = DateTime.Now.ToString("MM\\/dd\\/yyyy");
 
 
                     SqliteDataAccess.InsertSale(sale);
