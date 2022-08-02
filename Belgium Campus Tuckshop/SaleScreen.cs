@@ -27,8 +27,6 @@ namespace Belgium_Campus_Tuckshop
         }
 
 
-
-
         // Calls up the GetSelectedItem method to display selected item details for popular Items.
         private void metroSetListBox1_SelectedIndexChanged(object sender)
         {
@@ -91,13 +89,14 @@ namespace Belgium_Campus_Tuckshop
 
         private void SalesScreen_Load(object sender, EventArgs e)
         {
-            //Initializes List Boxes
 
             mtbxCustomerName.Focus();
             mtxRingUp.Enabled = false;
             mbtnPay.Enabled = false;
             mbtnNext.Enabled = false;
             mtbxAmountPaid.Enabled = false;
+
+            //Populates the Popular Item List
 
             List<ItemModel> PopularItemList = SqliteDataAccess.LoadPopularItems();
 
@@ -191,8 +190,7 @@ namespace Belgium_Campus_Tuckshop
         /// This method validates that the user has entered a customer name.
         /// once this is validated, the sale is exported to the database into the sales table.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
 
         private void mbtnNext_Click(object sender, EventArgs e)
         {
