@@ -479,12 +479,12 @@
             this.lblNumSet.Location = new System.Drawing.Point(20, 570);
             this.lblNumSet.Name = "lblNumSet";
             this.lblNumSet.Size = new System.Drawing.Size(100, 23);
-            this.lblNumSet.Style = MetroSet_UI.Enums.Style.Light;
+            this.lblNumSet.Style = MetroSet_UI.Enums.Style.Custom;
             this.lblNumSet.StyleManager = null;
             this.lblNumSet.TabIndex = 36;
             this.lblNumSet.Text = "Quantity";
             this.lblNumSet.ThemeAuthor = "Narwin";
-            this.lblNumSet.ThemeName = "MetroLite";
+            this.lblNumSet.ThemeName = "MetroDark";
             this.lblNumSet.Click += new System.EventHandler(this.metroSetLabel1_Click);
             // 
             // mtxRingUp
