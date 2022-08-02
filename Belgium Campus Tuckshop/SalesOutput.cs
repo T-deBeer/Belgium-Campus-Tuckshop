@@ -26,7 +26,8 @@ namespace Belgium_Campus_Tuckshop
             {
                 if (ItemName == Item.ProductName)
                 {
-                    string Layout = "{0}@{1} each, quantity {2} = R{3}";
+
+                   string Layout = "{0}@{1} each, qty: {2} = R{3}";
                    cumulativeItemPrice = Item.ProductCost * NumericValue;
                    SumTotal.TotalSum = SumTotal.TotalSum + cumulativeItemPrice;
 

@@ -96,7 +96,7 @@ namespace Belgium_Campus_Tuckshop
             mbtnNext.Enabled = false;
             mtbxAmountPaid.Enabled = false;
 
-            //Populates the Popular Item List
+            // Populates the Popular Item List.
 
             List<ItemModel> PopularItemList = SqliteDataAccess.LoadPopularItems();
 
@@ -105,12 +105,16 @@ namespace Belgium_Campus_Tuckshop
                 ListBoxPopular.Items.Add(item.ProductName);
             }
 
+            // Populates the Food Item List.
+
             List<ItemModel> FoodItemlist = SqliteDataAccess.LoadFoodItems();
 
             foreach (var item in FoodItemlist)
             {
                 ListBoxFood.Items.Add(item.ProductName);
             }
+
+            // Populates the cold drinks list.
 
             List<ItemModel> ColdDrinksList = SqliteDataAccess.LoadColdDrinks();
 
@@ -119,6 +123,8 @@ namespace Belgium_Campus_Tuckshop
                ListBoxColdDrinks.Items.Add(item.ProductName);
             }
 
+            // Populates the hot drinks list.
+
             List<ItemModel> HotDrinksList = SqliteDataAccess.LoadHotDrinks();
 
             foreach (var item in HotDrinksList)
@@ -126,8 +132,6 @@ namespace Belgium_Campus_Tuckshop
                 ListBoxHotDrinks.Items.Add(item.ProductName);
             }
             ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
-
-
 
         }
 
@@ -145,12 +149,16 @@ namespace Belgium_Campus_Tuckshop
 
             mbtnNext.Enabled = true;
 
+            //checks if the amount paid is a number 
+
             AmountPaid = mtbxAmountPaid.Text;
             result = int.TryParse(AmountPaid, out i);
 
                 if ((result ==  true) )
                 {
                     PaidAmount = Convert.ToDouble(AmountPaid);
+                
+                    // Checks if he Paid Amount is greater than the total bill                
 
                     if (PaidAmount >= SalesOutput.SumTotal.TotalSum)
                     {
@@ -190,8 +198,6 @@ namespace Belgium_Campus_Tuckshop
         /// This method validates that the user has entered a customer name.
         /// once this is validated, the sale is exported to the database into the sales table.
         /// </summary>
-
-
         private void mbtnNext_Click(object sender, EventArgs e)
         {
             string CustomerName = "";
@@ -210,13 +216,13 @@ namespace Belgium_Campus_Tuckshop
             {
                 if (CustomerName != "")
                 {
-
+                    
                     for (int i = 0; i < ListBoxOutput.Count; i++)
                     {
-                        RecieptText ="\n" + ListBoxOutput.Items[i].ToString();
+                        RecieptText += "\n" + ListBoxOutput.Items[i].ToString();
                     }
 
-                    
+                    // Provides the values that need to be added to the data base
                     sale = new SaleModel();
                     sale.CustomerName = CustomerName;
                     sale.Receipt = RecieptText;
