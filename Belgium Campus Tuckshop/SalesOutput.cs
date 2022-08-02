@@ -40,8 +40,6 @@ namespace Belgium_Campus_Tuckshop
 
         }
 
-
-
         public static class SumTotal
         {
             public static double TotalSum;

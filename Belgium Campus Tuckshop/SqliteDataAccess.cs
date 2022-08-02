@@ -176,6 +176,14 @@ namespace ClassLibrary
             }
         }
 
+        public static void AddNewSale(DateTime date,string CustomerName,string reciept)
+        {
+            using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
+            {
+               // database.Execute("INSERT INTO SalesReport (SaleDate ,CustomerName, Reciept) VALUES (@SalesDate, @CustomerName, @Reciept)", date, CustomerName, reciept);
+            }
+        }
+
         /// <summary>
         /// Writes a new Item of class ItemModel into
         /// the Products table of the Database

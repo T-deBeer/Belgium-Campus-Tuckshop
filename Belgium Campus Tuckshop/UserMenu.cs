@@ -18,6 +18,7 @@ namespace Belgium_Campus_Tuckshop
             InitializeComponent();
         }
 
+        // Opens Sales Screen
         private void mbtnSalesMenu_Click(object sender, EventArgs e)
         {
             SalesScreen salesScreenForm = new SalesScreen();
@@ -26,6 +27,8 @@ namespace Belgium_Campus_Tuckshop
             this.Close();
         }
 
+        // Opens up the Item Menu
+
         private void mbtnItemsMenu_Click(object sender, EventArgs e)
         {
             ItemsForms menuItemsForms = new ItemsForms();
@@ -33,17 +36,23 @@ namespace Belgium_Campus_Tuckshop
             this.Close();
         }
 
+        // Opens Sales History Menu
+
         private void mbtnSalesHistory_Click(object sender, EventArgs e)
         {
             SalesReport SalesHistory = new SalesReport();
             SalesHistory.ShowDialog();
-            this.Close();
+            this.Dispose();
         }
+
+        // Exits the Main Application
 
         private void mbtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        // Takes the user back to the login form
 
         private void mbtnSignOut_Click(object sender, EventArgs e)
         {

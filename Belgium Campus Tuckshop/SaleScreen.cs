@@ -26,26 +26,25 @@ namespace Belgium_Campus_Tuckshop
 
         }
 
-        // Calls up the GetSelectedItem method to display selected item details.
+        // Calls up the GetSelectedItem method to display selected item details for popular Items.
         private void metroSetListBox1_SelectedIndexChanged(object sender)
         {
             string ItemName = "";
             int ItemQuantity = 0;
-            bool validInput = false;
 
             ItemName = ListBoxPopular.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
 
-            //rtbxReceipt.AppendText("\n" + );
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
 
         }
+
+        // Calls up the GetSelectedItem method to display selected item details for Food Items.
 
         private void ListBoxFood_SelectedIndexChanged(object sender)
         {
             string ItemName = "";
             int ItemQuantity = 0;
-            bool validInput = false;
 
             ItemName = ListBoxFood.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
@@ -53,11 +52,11 @@ namespace Belgium_Campus_Tuckshop
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
+        // Calls up the GetSelectedItem method to display selected item details for Cold Drinks.
         private void ListBoxColdDrinks_SelectedIndexChanged(object sender)
         {
             string ItemName = "";
             int ItemQuantity = 0;
-            bool validInput = false;
 
             ItemName = ListBoxColdDrinks.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
@@ -65,11 +64,12 @@ namespace Belgium_Campus_Tuckshop
             ListBoxOutput.Items.Add(SalesOutput.GetSelectedItem(ItemName, ItemQuantity));
         }
 
+        // Calls up the GetSelectedItem method to display selected item details for Hot Drinks.
+
         private void ListBoxHotDrinks_SelectedIndexChanged(object sender)
         {
             string ItemName = "";
             int ItemQuantity = 0;
-            bool validInput = false;
 
             ItemName = ListBoxHotDrinks.SelectedItem.ToString();
             ItemQuantity = Convert.ToInt32(setNumeric.Value);
@@ -114,10 +114,8 @@ namespace Belgium_Campus_Tuckshop
                 ListBoxHotDrinks.Items.Add(item.ProductName);
             }
 
-            ListBoxOutput.Items.Add("Item Name\tBase Price\tQty\tPrice");
+           // ListBoxOutput.Items.Add("Item Name\tBase Price\tQty\tPrice");
             ListBoxOutput.Items.Add("-------------------------------------------------------------------------");
-            
-            
 
         }
 
@@ -155,7 +153,6 @@ namespace Belgium_Campus_Tuckshop
                     MessageBox.Show("Please enter a number value ");
                     mtbxAmountPaid.Focus();
                 }
-            
         }
 
         private void mtbxAmountPaid_Click(object sender, EventArgs e)
@@ -177,7 +174,9 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnNext_Click(object sender, EventArgs e)
         {
-            
+            string CustomerName = "";
+
+            CustomerName = lblCustomerName.Text;
         }
 
         private void mbtnBack_Click(object sender, EventArgs e)
