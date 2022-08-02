@@ -196,7 +196,7 @@ namespace ClassLibrary
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("UPDATE Products SET ProductName = @ProductName, ProductType = @ProductType, ProductCost = @ProductCost, Popular = @Popular, ItemDescription = @ItemDescription WHERE ProductName = @ProductName", item);
+                database.Execute($"UPDATE Products SET ProductName = @ProductName, ProductType = @ProductType, ProductCost = @ProductCost, Popular = @Popular, ItemDescription = @ItemDescription WHERE ProductName = '{name}'", item);
             }
         }
 
