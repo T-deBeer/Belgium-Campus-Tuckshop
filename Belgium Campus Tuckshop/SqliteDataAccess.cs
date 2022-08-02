@@ -133,7 +133,7 @@ namespace ClassLibrary
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("INSERT INTO SalesReport (SaleDate, CustomerName, Receipt) VALUES (@Date, @CustomerName, @Receipt)", sale);
+                database.Execute("INSERT INTO SalesReport (SaleDate, CustomerName, Receipt) VALUES (@SaleDate, @CustomerName, @Receipt)", sale);
             }
         }
 
