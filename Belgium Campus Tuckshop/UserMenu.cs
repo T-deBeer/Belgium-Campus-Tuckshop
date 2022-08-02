@@ -24,7 +24,7 @@ namespace Belgium_Campus_Tuckshop
             SalesScreen salesScreenForm = new SalesScreen();
             salesScreenForm.ShowDialog();
             
-            this.Close();
+            this.Hide();
         }
 
         // Opens up the Item Menu
@@ -33,7 +33,7 @@ namespace Belgium_Campus_Tuckshop
         {
             ItemsForms menuItemsForms = new ItemsForms();
             menuItemsForms.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         // Opens Sales History Menu
@@ -42,7 +42,7 @@ namespace Belgium_Campus_Tuckshop
         {
             SalesReport SalesHistory = new SalesReport();
             SalesHistory.ShowDialog();
-            this.Dispose();
+            this.Hide();
         }
 
         // Exits the Main Application
@@ -58,7 +58,7 @@ namespace Belgium_Campus_Tuckshop
         {
             LoginForm loginForm = new LoginForm(); 
             loginForm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

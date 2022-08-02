@@ -187,7 +187,12 @@ namespace Belgium_Campus_Tuckshop
       
         }
 
-    
+        /// <summary>
+        /// This method validates that the user has entered a customer name.
+        /// once this is validated, the sale is exported to the database into the sales table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void mbtnNext_Click(object sender, EventArgs e)
         {
@@ -195,12 +200,32 @@ namespace Belgium_Campus_Tuckshop
 
             CustomerName = mtbxCustomerName.Text;
             bool Result = CustomerName.All(char.IsLetter);
+            var dateToday = DateTime.Now;
+       ;
+
+            string RecieptText ="";
+
+            SaleModel sale = new SaleModel();
 
 
             if (Result == true)
             {
                 if (CustomerName != "")
                 {
+
+                    for (int i = 0; i < ListBoxOutput.Count; i++)
+                    {
+                        RecieptText ="\n" + ListBoxOutput.Items[i].ToString();
+                    }
+
+                    
+                    sale = new SaleModel();
+                    sale.CustomerName = CustomerName;
+                    sale.Receipt = RecieptText;
+                    sale.Date = DateTime.Now.ToString("MM\\/dd\\/yyyy");
+
+
+                    SqliteDataAccess.InsertSale(sale);
                     
                 }
                 else
