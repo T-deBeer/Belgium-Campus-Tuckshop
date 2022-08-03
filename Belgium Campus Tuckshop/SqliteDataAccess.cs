@@ -185,7 +185,7 @@ namespace ClassLibrary
         {
             using (IDbConnection database = new SQLiteConnection(LoadConnectionString()))
             {
-                database.Execute("INSERT INTO Products (ProductName, ProductType, ProductCost, Popular, ItemDescription) VALUES (@ProductName, @ProductType, @ProductCost, @Popular @ItemDescription)", item);
+                database.Execute("INSERT INTO Products (ProductName, ProductType, ProductCost, Popular, ItemDescription) VALUES (@ProductName, @ProductType, @ProductCost, @Popular, @ItemDescription)", item);
             }
         }
 

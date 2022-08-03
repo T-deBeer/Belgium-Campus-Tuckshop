@@ -136,7 +136,7 @@ namespace Belgium_Campus_Tuckshop
             bool deleted = false;
 
             //If an item has been selected
-            if (mtbxItemName.Text != "" || mtbxItemName.Text != " ")
+            if (AllFieldsEntered())
             {
                 var confirmation = MessageBox.Show("Are you sure you want to delete the item.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -159,12 +159,6 @@ namespace Belgium_Campus_Tuckshop
                     LoadItemsInListBoxes();
                     ResetControls();
                 }
-
-                //If something went wrong and an item could not be found to delete
-                if (!deleted)
-                {
-                    MessageBox.Show("Something went wrong the item was not deleted.");
-                }
             }
             else
             {
@@ -176,7 +170,7 @@ namespace Belgium_Campus_Tuckshop
         {
             bool updated = false;
 
-            if (mtbxItemName.Text != "" || mtbxItemName.Text != " ")
+            if (AllFieldsEntered())
             {
                 var confirmation = MessageBox.Show("Are you sure you want to update the item.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -211,11 +205,6 @@ namespace Belgium_Campus_Tuckshop
                         }
                     }
                 }
-
-                if (!updated)
-                {
-                    MessageBox.Show("Something went wrong the item was not updated.");
-                }
             }
             else
             {
@@ -225,8 +214,9 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnAddItem_Click(object sender, EventArgs e)
         {
-            if (mtbxItemName.Text != "" || mtbxItemName.Text != " ")
+            if (AllFieldsEntered())
             {
+                bool added = false;
                 var confirmation = MessageBox.Show("Are you sure you want to add this item.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (confirmation == DialogResult.Yes)
@@ -238,13 +228,17 @@ namespace Belgium_Campus_Tuckshop
 
                         try
                         {
-                            newItem.ProductName = mtbxItemName.Text;
-                            newItem.ProductType = cbxItemType.SelectedItem.ToString();
-                            newItem.ItemDescription = mtbxDescription.Text;
-                            newItem.ProductCost = double.Parse(mtbxItemCost.Text);
-                            newItem.Popular = Convert.ToInt32(mswPopular.Switched);
-                            SqliteDataAccess.AddNewItem(newItem);
-                            MessageBox.Show("The item has been added the database.");
+                            if (!added)
+                            {
+                                newItem.ProductName = mtbxItemName.Text;
+                                newItem.ProductType = cbxItemType.SelectedItem.ToString();
+                                newItem.ItemDescription = mtbxDescription.Text;
+                                newItem.ProductCost = double.Parse(mtbxItemCost.Text);
+                                newItem.Popular = Convert.ToInt32(mswPopular.Switched);
+                                SqliteDataAccess.AddNewItem(newItem);
+                                MessageBox.Show("The item has been added the database.");
+                                added = true;
+                            }
                         }
                         catch (Exception ex)
                         {
@@ -265,11 +259,32 @@ namespace Belgium_Campus_Tuckshop
 
         private void ResetControls()
         {
-            cbxItemType.SelectedIndex = -1;
+            cbxItemType.SelectedItem = null;
             mtbxDescription.Text = "";
             mtbxItemCost.Text = "";
             mtbxItemName.Text = "";
             mswPopular.Switched = false;
+        }
+
+        private bool AllFieldsEntered()
+        {
+            if (mtbxItemName.Text == "" || mtbxItemName.Text == " ")
+            {
+                return false;
+            }
+            if (mtbxDescription.Text == "" || mtbxDescription.Text == " ")
+            {
+                return false;
+            }
+            if (mtbxItemCost.Text == "" || mtbxItemCost.Text == " ")
+            {
+                return false;
+            }
+            if (cbxItemType.SelectedItem == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
