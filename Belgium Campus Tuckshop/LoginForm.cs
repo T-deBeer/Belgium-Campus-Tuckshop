@@ -64,7 +64,12 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var confirmation = MessageBox.Show("Are you sure you want to exit.", "Exit the Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

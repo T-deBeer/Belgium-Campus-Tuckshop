@@ -17,6 +17,48 @@ namespace Belgium_Campus_Tuckshop
         public SalesReport()
         {
             InitializeComponent();
+
+            int Day = dateTimePicker1.Value.Day;
+            int Month = dateTimePicker1.Value.Month;
+            int Year = dateTimePicker1.Value.Year;
+
+            //Store datetimepicker in string variable to compare to the database's date
+
+            string Date = dateTimePicker1.Value.ToString("MM/dd/yyyy");
+
+            try
+            {
+                List<ClassLibrary.SaleModel> listSales = ClassLibrary.SqliteDataAccess.LoadAllSales();
+
+                //Loops through the database
+
+                foreach (var saleModel in listSales)
+                {
+                    //If the dates are equal, display the customer's name
+
+                    if (saleModel.SaleDate == Date)
+                    {
+                        //If the dates are equal, display the customer's name
+
+                        lbxCustomers.Items.Add(saleModel.CustomerName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The Database could not be loaded succesfully. Exception raised: " + ex.Message);
+            }
+
+            try
+            {
+                //Display the date in the label above the listbox
+
+                lblCustomers.Text = "Customers On " + DetermineMonth(Month) + " " + Day + " " + Year;
+            }
+            catch (FormatException ex2)
+            {
+                MessageBox.Show("The DateTime format could not be configured. Exception raised: " + ex2.Message);
+            }
         }
 
         private void mbtnDelete_Click(object sender, EventArgs e) //Delete Button for deleting sales
@@ -259,10 +301,14 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnBack_Click(object sender, EventArgs e) //Returns to the Main Menu of the program
         {
-            UserMenu myUserForm = new UserMenu();
-            myUserForm.ShowDialog();
+            var confirmation = MessageBox.Show("Are you sure you want to return to menu.", "Return to Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            this.Hide(); //Hides current form
+            if (confirmation == DialogResult.Yes)
+            {
+                UserMenu form = new UserMenu();
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

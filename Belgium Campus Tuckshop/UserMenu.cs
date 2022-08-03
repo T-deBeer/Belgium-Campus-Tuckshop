@@ -22,7 +22,7 @@ namespace Belgium_Campus_Tuckshop
         private void mbtnSalesMenu_Click(object sender, EventArgs e)
         {
             SalesScreen salesScreenForm = new SalesScreen();
-            salesScreenForm.ShowDialog();
+            salesScreenForm.Show();
             
             this.Hide();
         }
@@ -32,7 +32,7 @@ namespace Belgium_Campus_Tuckshop
         private void mbtnItemsMenu_Click(object sender, EventArgs e)
         {
             ItemsForms menuItemsForms = new ItemsForms();
-            menuItemsForms.ShowDialog();
+            menuItemsForms.Show();
             this.Hide();
         }
 
@@ -41,7 +41,7 @@ namespace Belgium_Campus_Tuckshop
         private void mbtnSalesHistory_Click(object sender, EventArgs e)
         {
             SalesReport SalesHistory = new SalesReport();
-            SalesHistory.ShowDialog();
+            SalesHistory.Show();
             this.Hide();
         }
 
@@ -49,16 +49,26 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var confirmation = MessageBox.Show("Are you sure you want to exit.", "Exit the Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         // Takes the user back to the login form
 
         private void mbtnSignOut_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm(); 
-            loginForm.ShowDialog();
-            this.Hide();
+            var confirmation = MessageBox.Show("Are you sure you want to sign out.", "Sign Out of Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+                this.Hide();
+            }   
         }
     }
 }

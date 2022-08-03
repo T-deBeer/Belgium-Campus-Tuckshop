@@ -247,10 +247,14 @@ namespace Belgium_Campus_Tuckshop
 
         private void mbtnBack_Click(object sender, EventArgs e)
         {
-            UserMenu myUserForm = new UserMenu();
-            myUserForm.ShowDialog();
-            
-            this.Close();
+            var confirmation = MessageBox.Show("Are you sure you want to return to menu.", "Return to Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmation == DialogResult.Yes)
+            {
+                UserMenu form = new UserMenu();
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }

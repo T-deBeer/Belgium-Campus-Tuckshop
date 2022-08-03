@@ -48,9 +48,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.ListBoxHotDrinks = new MetroSet_UI.Controls.MetroSetListBox();
             this.setNumeric = new System.Windows.Forms.NumericUpDown();
-            this.lblNumSet = new MetroSet_UI.Controls.MetroSetLabel();
             this.mtxRingUp = new MetroSet_UI.Controls.MetroSetButton();
             this.ListBoxOutput = new MetroSet_UI.Controls.MetroSetListBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPopular.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -472,21 +472,6 @@
             0,
             0});
             // 
-            // lblNumSet
-            // 
-            this.lblNumSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNumSet.IsDerivedStyle = true;
-            this.lblNumSet.Location = new System.Drawing.Point(20, 570);
-            this.lblNumSet.Name = "lblNumSet";
-            this.lblNumSet.Size = new System.Drawing.Size(100, 23);
-            this.lblNumSet.Style = MetroSet_UI.Enums.Style.Custom;
-            this.lblNumSet.StyleManager = null;
-            this.lblNumSet.TabIndex = 36;
-            this.lblNumSet.Text = "Quantity";
-            this.lblNumSet.ThemeAuthor = "Narwin";
-            this.lblNumSet.ThemeName = "MetroDark";
-            this.lblNumSet.Click += new System.EventHandler(this.metroSetLabel1_Click);
-            // 
             // mtxRingUp
             // 
             this.mtxRingUp.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -544,15 +529,28 @@
             this.ListBoxOutput.ThemeAuthor = "Narwin";
             this.ListBoxOutput.ThemeName = "MetroDark";
             // 
+            // lblQuantity
+            // 
+            this.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.lblQuantity.Location = new System.Drawing.Point(20, 566);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(55, 16);
+            this.lblQuantity.TabIndex = 39;
+            this.lblQuantity.Text = "Quantity";
+            // 
             // SalesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1014, 718);
+            this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.ListBoxOutput);
             this.Controls.Add(this.mtxRingUp);
-            this.Controls.Add(this.lblNumSet);
             this.Controls.Add(this.setNumeric);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblChange);
@@ -604,8 +602,8 @@
         private TabPage tabPage4;
         private MetroSet_UI.Controls.MetroSetListBox ListBoxHotDrinks;
         private NumericUpDown setNumeric;
-        private MetroSet_UI.Controls.MetroSetLabel lblNumSet;
         private MetroSet_UI.Controls.MetroSetButton mtxRingUp;
         private MetroSet_UI.Controls.MetroSetListBox ListBoxOutput;
+        private Label lblQuantity;
     }
 }
