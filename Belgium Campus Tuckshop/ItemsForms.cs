@@ -270,19 +270,25 @@ namespace Belgium_Campus_Tuckshop
         {
             if (mtbxItemName.Text == "" || mtbxItemName.Text == " ")
             {
+                MessageBox.Show("Your item needs a name.");
                 return false;
             }
             if (mtbxDescription.Text == "" || mtbxDescription.Text == " ")
             {
+                MessageBox.Show("Your item needs a description.");
                 return false;
             }
             if (mtbxItemCost.Text == "" || mtbxItemCost.Text == " ")
             {
+                MessageBox.Show("Your item needs a price.");
                 return false;
+
             }
             if (cbxItemType.SelectedItem == null)
             {
+                MessageBox.Show("Your item needs a prouduct type.");
                 return false;
+
             }
             return true;
         }
