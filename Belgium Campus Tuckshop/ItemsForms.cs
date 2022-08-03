@@ -157,6 +157,7 @@ namespace Belgium_Campus_Tuckshop
 
                     //Reloads the list boxes with the new updated database
                     LoadItemsInListBoxes();
+                    ResetControls();
                 }
 
                 //If something went wrong and an item could not be found to delete
@@ -206,6 +207,7 @@ namespace Belgium_Campus_Tuckshop
                             }
 
                             LoadItemsInListBoxes();
+                            ResetControls();
                         }
                     }
                 }
@@ -251,6 +253,7 @@ namespace Belgium_Campus_Tuckshop
 
 
                         LoadItemsInListBoxes();
+                        ResetControls();
                     }
                 }
             }
@@ -258,6 +261,15 @@ namespace Belgium_Campus_Tuckshop
             {
                 MessageBox.Show("You need to create an item before it can be added.");
             }
+        }
+
+        private void ResetControls()
+        {
+            cbxItemType.SelectedIndex = -1;
+            mtbxDescription.Text = "";
+            mtbxItemCost.Text = "";
+            mtbxItemName.Text = "";
+            mswPopular.Switched = false;
         }
     }
 }
