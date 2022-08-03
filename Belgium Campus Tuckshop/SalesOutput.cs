@@ -12,7 +12,7 @@ namespace Belgium_Campus_Tuckshop
 {
     public class SalesOutput
     {
-        //Method for getting selected item
+        // Method for fetching related data from the database about the selected items.
 
         
         public static string GetSelectedItem(string ItemName, int NumericValue)
