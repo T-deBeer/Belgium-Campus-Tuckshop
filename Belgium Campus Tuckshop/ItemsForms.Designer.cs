@@ -31,7 +31,7 @@
             this.lblItemName = new System.Windows.Forms.Label();
             this.mtbxItemName = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblItemDesc = new System.Windows.Forms.Label();
-            this.metroSetTextBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.mtbxItemDesc = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lblItemCost = new System.Windows.Forms.Label();
             this.mtbxItemCost = new MetroSet_UI.Controls.MetroSetTextBox();
             this.mbtnUpdate = new MetroSet_UI.Controls.MetroSetButton();
@@ -109,35 +109,35 @@
             this.lblItemDesc.TabIndex = 9;
             this.lblItemDesc.Text = "Item Description";
             // 
-            // metroSetTextBox1
+            // mtbxItemDesc
             // 
-            this.metroSetTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroSetTextBox1.AutoCompleteCustomSource = null;
-            this.metroSetTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.metroSetTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.metroSetTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetTextBox1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetTextBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.metroSetTextBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetTextBox1.Image = null;
-            this.metroSetTextBox1.IsDerivedStyle = true;
-            this.metroSetTextBox1.Lines = null;
-            this.metroSetTextBox1.Location = new System.Drawing.Point(467, 249);
-            this.metroSetTextBox1.MaxLength = 32767;
-            this.metroSetTextBox1.Multiline = true;
-            this.metroSetTextBox1.Name = "metroSetTextBox1";
-            this.metroSetTextBox1.ReadOnly = false;
-            this.metroSetTextBox1.Size = new System.Drawing.Size(250, 176);
-            this.metroSetTextBox1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetTextBox1.StyleManager = null;
-            this.metroSetTextBox1.TabIndex = 8;
-            this.metroSetTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.metroSetTextBox1.ThemeAuthor = "Narwin";
-            this.metroSetTextBox1.ThemeName = "MetroDark";
-            this.metroSetTextBox1.UseSystemPasswordChar = false;
-            this.metroSetTextBox1.WatermarkText = "Item Description";
+            this.mtbxItemDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtbxItemDesc.AutoCompleteCustomSource = null;
+            this.mtbxItemDesc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.mtbxItemDesc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.mtbxItemDesc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.mtbxItemDesc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.mtbxItemDesc.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxItemDesc.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxItemDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mtbxItemDesc.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.mtbxItemDesc.Image = null;
+            this.mtbxItemDesc.IsDerivedStyle = true;
+            this.mtbxItemDesc.Lines = null;
+            this.mtbxItemDesc.Location = new System.Drawing.Point(467, 249);
+            this.mtbxItemDesc.MaxLength = 32767;
+            this.mtbxItemDesc.Multiline = true;
+            this.mtbxItemDesc.Name = "mtbxItemDesc";
+            this.mtbxItemDesc.ReadOnly = false;
+            this.mtbxItemDesc.Size = new System.Drawing.Size(250, 176);
+            this.mtbxItemDesc.Style = MetroSet_UI.Enums.Style.Dark;
+            this.mtbxItemDesc.StyleManager = null;
+            this.mtbxItemDesc.TabIndex = 8;
+            this.mtbxItemDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.mtbxItemDesc.ThemeAuthor = "Narwin";
+            this.mtbxItemDesc.ThemeName = "MetroDark";
+            this.mtbxItemDesc.UseSystemPasswordChar = false;
+            this.mtbxItemDesc.WatermarkText = "Item Description";
             // 
             // lblItemCost
             // 
@@ -208,6 +208,7 @@
             this.mbtnUpdate.Text = "Update Item";
             this.mbtnUpdate.ThemeAuthor = "Narwin";
             this.mbtnUpdate.ThemeName = "MetroDark";
+            this.mbtnUpdate.Click += new System.EventHandler(this.mbtnUpdate_Click);
             // 
             // mbtnAddItem
             // 
@@ -235,6 +236,7 @@
             this.mbtnAddItem.Text = "Add Item";
             this.mbtnAddItem.ThemeAuthor = "Narwin";
             this.mbtnAddItem.ThemeName = "MetroDark";
+            this.mbtnAddItem.Click += new System.EventHandler(this.mbtnAddItem_Click);
             // 
             // mbtnBack
             // 
@@ -262,6 +264,7 @@
             this.mbtnBack.Text = "Back To Menu";
             this.mbtnBack.ThemeAuthor = "Narwin";
             this.mbtnBack.ThemeName = "MetroDark";
+            this.mbtnBack.Click += new System.EventHandler(this.mbtnBack_Click);
             // 
             // mbtnDelete
             // 
@@ -289,6 +292,7 @@
             this.mbtnDelete.Text = "Delete Item";
             this.mbtnDelete.ThemeAuthor = "Narwin";
             this.mbtnDelete.ThemeName = "MetroDark";
+            this.mbtnDelete.Click += new System.EventHandler(this.mbtnDelete_Click);
             // 
             // lblItems
             // 
@@ -482,7 +486,7 @@
             this.Controls.Add(this.mtbxItemCost);
             this.Controls.Add(this.lblItemCost);
             this.Controls.Add(this.lblItemDesc);
-            this.Controls.Add(this.metroSetTextBox1);
+            this.Controls.Add(this.mtbxItemDesc);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.mtbxItemName);
             this.Controls.Add(this.lblItems);
@@ -503,7 +507,7 @@
         private Label lblItemName;
         private MetroSet_UI.Controls.MetroSetTextBox mtbxItemName;
         private Label lblItemDesc;
-        private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox1;
+        private MetroSet_UI.Controls.MetroSetTextBox mtbxItemDesc;
         private Label lblItemCost;
         private MetroSet_UI.Controls.MetroSetTextBox mtbxItemCost;
         private MetroSet_UI.Controls.MetroSetButton mbtnUpdate;
@@ -521,5 +525,5 @@
         private MetroSet_UI.Controls.MetroSetTextBox mtbxItemType;
         private Label lblPopular;
         private MetroSet_UI.Controls.MetroSetSwitch mswPopular;
-    }
+        }
 }
